@@ -37,7 +37,13 @@ jobs:
         env:
           CALDAV_USERNAME: ${{ secrets.CALDAV_USERNAME }}
           CALDAV_PASSWORD: ${{ secrets.CALDAV_PASSWORD }}
-        run: python dividend.py -c config --caldav
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        run: |
+          if [ -n "$LLM_API_KEY" ]; then
+            python dividend.py -c config --caldav --analyze
+          else
+            python dividend.py -c config --caldav
+          fi
 
       - name: Deploy ICS to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -45,7 +51,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output
           publish_branch: gh-pages
-          keep_files: false
+          keep_files: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'Update dividend calendar [skip ci]'

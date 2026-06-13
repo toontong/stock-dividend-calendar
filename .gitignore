@@ -5,8 +5,9 @@
 WPS CalDav账号.txt
 
 # Generated output
-output/dividend.ics
+output/
 bank_dividend.ics
+blue_chip_dividend.ics
 
 # Python
 __pycache__/
