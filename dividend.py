@@ -75,6 +75,12 @@ class Event:
         return self.reg_date or self.ex_date
 
     @property
+    def stock_url(self) -> str:
+        """东方财富个股详情页"""
+        exchange = "sh" if self.code.startswith("6") else "sz"
+        return f"https://quote.eastmoney.com/{exchange}{self.code}.html"
+
+    @property
     def uid(self) -> str:
         return f"{self.code}-{self.event_date.isoformat()}@astock-dividend"
 
@@ -85,6 +91,7 @@ class Event:
     @property
     def description(self) -> str:
         parts = [f"股票: {self.name}({self.code})"]
+        parts.append(f"详情: {self.stock_url}")
         if self.cash_dividend:
             per_share = self.cash_dividend / 10
             parts.append(f"每10股派{self.cash_dividend}元（每股派{per_share:.3f}元）")
@@ -335,6 +342,57 @@ def _fetch_dividend_history(stock: Stock, lookback_years: int = 5) -> list[dict]
     except Exception as exc:
         logger.warning("获取 %s 历史分红失败: %s", stock.label, exc)
     return rows
+
+
+def _fetch_recent_trades(code: str, days: int = 10) -> list[dict]:
+    """获取最近N日交易数据（OHLCV + 涨跌幅）"""
+    try:
+        end = date.today().strftime("%Y%m%d")
+        start = (date.today() - timedelta(days=days + 5)).strftime("%Y%m%d")
+        df = ak.stock_zh_a_hist(symbol=code, period="daily", start_date=start, end_date=end, adjust="qfq")
+        if df is None or df.empty:
+            return []
+        result: list[dict] = []
+        for _, row in df.tail(days).iterrows():
+            result.append({
+                "date": str(row.get("日期", "")),
+                "open": float(row.get("开盘", 0)),
+                "high": float(row.get("最高", 0)),
+                "low": float(row.get("最低", 0)),
+                "close": float(row.get("收盘", 0)),
+                "volume": int(row.get("成交量", 0)),
+                "amount": float(row.get("成交额", 0)),
+                "change_pct": float(row.get("涨跌幅", 0)),
+                "turnover": float(row.get("换手率", 0)),
+            })
+        return result
+    except Exception:
+        return []
+
+
+def _fetch_margin_detail(code: str) -> dict:
+    """获取个股融资融券数据"""
+    try:
+        today_str = date.today().strftime("%Y%m%d")
+        if code.startswith("6"):
+            df = ak.stock_margin_detail_sse(date=today_str)
+        else:
+            df = ak.stock_margin_szse_detail(date=today_str) if hasattr(ak, "stock_margin_szse_detail") else None
+        if df is None or df.empty:
+            return {}
+        row = df[df["标的代码"] == code]
+        if row.empty:
+            return {}
+        r = row.iloc[0]
+        return {
+            "fin_buy": float(r.get("融资买入额", r.get("融资净买入", 0)) or 0),
+            "fin_repay": float(r.get("融资偿还额", 0)) if "融资偿还额" in r.index else 0,
+            "fin_balance": float(r.get("融资余额", r.get("融资融券余额", 0)) or 0),
+            "short_vol": float(r.get("融券卖出量", r.get("融券净卖出", 0)) or 0),
+            "short_balance": float(r.get("融券余量", 0)) if "融券余量" in r.index else 0,
+        }
+    except Exception:
+        return {}
 
 
 def _history_to_json(history: list[dict]) -> list[dict]:
@@ -615,14 +673,17 @@ class StockAnalyzer:
                 "Content-Type": "application/json",
             })
 
-    def analyze(self, stock: Stock, events: list[Event], history: list[dict] | None = None) -> Optional[dict]:
+    def analyze(
+        self, stock: Stock, events: list[Event],
+        history: list[dict] | None = None,
+        trades: list[dict] | None = None,
+        margin: dict | None = None,
+    ) -> Optional[dict]:
         """对一只股票进行分析，返回结构化 dict 或 None"""
-        # 近期未来分红
         future_text = "\n".join(
             f"- {e.ex_date} 每10股派{e.cash_dividend}元 (送{e.stock_dividend}股/转增{e.stock_transfer}股) 进度:{e.progress}"
             for e in events
         )
-        # 历史分红
         history_text = ""
         if history:
             rows = []
@@ -632,13 +693,39 @@ class StockAnalyzer:
                 if h.get('transfer'): row += f" 转增{h['transfer']}股"
                 rows.append(row)
             history_text = "\n历史分红记录（近N年）:\n" + "\n".join(rows)
-
         events_summary = history_text + "\n\n近期分红事件:\n" + future_text if history_text else future_text
+
+        # 近10日行情
+        trades_text = ""
+        if trades:
+            lines = []
+            for t in trades:
+                sign = "+" if t["change_pct"] >= 0 else ""
+                lines.append(
+                    f"  {t['date']} 开{t['open']:.2f} 高{t['high']:.2f} 低{t['low']:.2f} 收{t['close']:.2f} "
+                    f"涨跌{sign}{t['change_pct']:.2f}% 换手{t['turnover']:.2f}% 量{t['volume']}"
+                )
+            trades_text = "\n近10个交易日行情（前复权）:\n" + "\n".join(lines)
+
+        # 融资融券
+        margin_text = ""
+        if margin:
+            parts = []
+            if margin.get("fin_balance"):
+                parts.append(f"融资余额: {margin['fin_balance']/1e8:.1f}亿")
+            if margin.get("fin_buy"):
+                parts.append(f"融资买入额: {margin['fin_buy']/1e8:.2f}亿")
+            if margin.get("short_balance"):
+                parts.append(f"融券余量: {margin['short_balance']/1e4:.1f}万股")
+            if parts:
+                margin_text = "\n融资融券数据:\n" + "  ".join(parts)
 
         user_prompt = (self.prompt_template
             .replace("{stock_code}", stock.code)
             .replace("{stock_name}", stock.name)
-            .replace("{events_summary}", events_summary))
+            .replace("{events_summary}", events_summary)
+            .replace("{recent_trades}", trades_text)
+            .replace("{margin_summary}", margin_text))
         messages = [
             {"role": "system", "content": "你是一位专业的A股投资分析师，擅长分红策略评估。请严格按要求的JSON格式输出。"},
             {"role": "user", "content": user_prompt},
@@ -700,6 +787,8 @@ def _parse_analysis(raw: str, stock: Stock) -> Optional[dict]:
             "valuation_level": "未知",
             "growth_outlook": "未知",
             "risk_level": "未知",
+            "recovery_probability": "未知",
+            "recovery_days": "未知",
             "analysis": raw,
             "highlights": [],
             "risks": [],
@@ -732,6 +821,8 @@ def _build_html(results: list[dict], date_str: str, model: str) -> str:
             "valuation": r["analysis"].get("valuation_level", "-"),
             "growth": r["analysis"].get("growth_outlook", "-"),
             "risk": r["analysis"].get("risk_level", "-"),
+            "recovery_prob": r["analysis"].get("recovery_probability", "未知"),
+            "recovery_days": r["analysis"].get("recovery_days", "未知"),
             "analysis": _md_to_html(r["analysis"].get("analysis", "")),
             "highlights": r["analysis"].get("highlights", []),
             "risks": r["analysis"].get("risks", []),
@@ -872,6 +963,7 @@ const FIELDS = [
   {{k:'valuation', l:'估值水平', f:d=>d.valuation}},
   {{k:'growth', l:'成长性', f:d=>d.growth}},
   {{k:'risk', l:'风险等级', f:d=>`<span class="tag tag-${{d.risk==='低'?'low':d.risk==='中'?'mid':'high'}}">${{d.risk}}</span>`}},
+  {{k:'recovery', l:'除权回补', f:d=>`${{d.recovery_prob}} · ${{d.recovery_days}}`}},
 ];
 let thead = '<tr><th>股票</th>'+FIELDS.map(f=>`<th>${{f.l}}</th>`).join('')+'</tr>';
 let tbody = DATA.map((d,i)=>`<tr>
@@ -900,7 +992,7 @@ const CARDS = DATA.map((d,i) => {{
 
   return `<div class="stock-card" id="stock-${{d.code}}">
     <h3><a href="#stock-${{d.code}}" style="color:${{color}}">${{d.name}}(${{d.code}})</a></h3>
-    <div class="event-row">即将分红: ${{eventsHtml||'无近期分红事件'}}</div>
+    <div class="event-row"><a href="${{d.code.startsWith('6')?'https://quote.eastmoney.com/sh':'https://quote.eastmoney.com/sz'}}${{d.code}}.html" target="_blank" style="color:var(--muted);"> 东方财富个股页</a> · 即将分红: ${{eventsHtml||'无近期分红事件'}}</div>
     <div class="fields">
       <div class="field"><div class="field-label">综合评分</div><div class="field-value" style="color:${{SCORE_COLOR(d.score)}}">${{d.score||'-'}}/10</div></div>
       <div class="field"><div class="field-label">分红稳定性</div><div class="field-value">${{d.stability}}</div></div>
@@ -909,6 +1001,8 @@ const CARDS = DATA.map((d,i) => {{
       <div class="field"><div class="field-label">估值水平</div><div class="field-value">${{d.valuation}}</div></div>
       <div class="field"><div class="field-label">成长性</div><div class="field-value">${{d.growth}}</div></div>
       <div class="field"><div class="field-label">风险等级</div><div class="field-value" style="color:${{RISK_COLOR[d.risk]||'#9ca3af'}}">${{d.risk}}</div></div>
+      <div class="field"><div class="field-label">回补概率</div><div class="field-value">${{d.recovery_prob}}</div></div>
+      <div class="field"><div class="field-label">预估天数</div><div class="field-value">${{d.recovery_days}}</div></div>
     </div>
     ${{historyHtml}}
     ${{hlHtml ? `<h4> 亮点</h4><ul>${{hlHtml}}</ul>` : ''}}
@@ -1208,14 +1302,18 @@ def main() -> int:
                         results.append({"stock": stock, "events": stock_events, "history": cached_history, "analysis": cached})
                     continue
 
-                logger.info("LLM 分析 %s(%s) [%d条历史记录] ...", ev.name, ev.code, len(history))
-                result = analyzer.analyze(stock, stock_events, history)
+                trades = _fetch_recent_trades(ev.code)
+                margin = _fetch_margin_detail(ev.code)
+                logger.info("LLM 分析 %s(%s) [历史%d条 行情%d日]", ev.name, ev.code, len(history), len(trades))
+                result = analyzer.analyze(stock, stock_events, history, trades, margin)
                 if result and result.get("analysis"):
                     results.append({"stock": stock, "events": stock_events, "history": history, "analysis": result})
                     meta[ev.code] = {"date": today_str, "model": analyzer.model, "cached_analysis": result, "history": _history_to_json(history)}
                     analysis_count += 1
                     preview = result.get("analysis", "")[:200].replace("\n", " ")
-                    print(f"\n--- {ev.name}({ev.code}) 评分:{result.get('overall_score','?')}/10 ---")
+                    recovery = result.get("recovery_probability", "?")
+                    rec_days = result.get("recovery_days", "?")
+                    print(f"\n--- {ev.name}({ev.code}) 评分:{result.get('overall_score','?')}/10 回补:{recovery} · {rec_days} ---")
                     print(f"{preview}...")
                 else:
                     logger.warning("  %s(%s) 分析失败", ev.name, ev.code)
