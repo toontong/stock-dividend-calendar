@@ -492,7 +492,7 @@ def _caldav_find_or_create(principal, name: str):
 
 
 def _caldav_fallback(principal, wanted: str):
-    """找不到目标日历且无法创建时，回退到最后一个可用日历"""
+    """找不到目标日历且无法创建时，从后往前找第一个可写的日历"""
     cals = []
     try:
         cals = list(principal.get_calendars())
@@ -500,13 +500,21 @@ def _caldav_fallback(principal, wanted: str):
         pass
     if not cals:
         return None
-    fallback = cals[-1]
-    try:
-        dn = fallback.get_display_name()
-    except Exception:
-        dn = "未知"
-    logger.warning("回退到现有日历 '%s'（请求的 '%s' 找不到且无法创建）", dn, wanted)
-    return fallback
+    # 从前往后遍历，WPS 第一个日历通常是可写的主日历
+    for c in cals:
+        try:
+            dn = c.get_display_name()
+            try:
+                c.events()
+                logger.info("回退到现有日历 '%s'（请求的 '%s' 找不到且无法创建）", dn, wanted)
+                return c
+            except Exception:
+                logger.debug("日历 '%s' 无法访问，跳过", dn)
+                continue
+        except Exception:
+            continue
+    logger.warning("无可用日历（请求的 '%s' 找不到且无法创建）", wanted)
+    return None
 
 
 def _caldav_index(cal_obj) -> dict[str, str]:

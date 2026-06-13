@@ -2,7 +2,7 @@
 # 优先级：环境变量 LLM_BASE_URL / LLM_MODEL / LLM_API_KEY > 下方字段
 enabled: false
 api_base: "https://api.deepseek.com"
-model: "deepseek-v4-pro[1m]"
+model: "deepseek-v4-pro"
 max_tokens: 4000
 temperature: 0.3
 request_delay: 1.0
