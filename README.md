@@ -50,7 +50,7 @@ CALDAV_PASSWORD=你的密码
 ### 4. 运行
 
 ```bash
-# 蓝筹股模式（无需 config 目录，使用内置 Top20 高分红蓝筹股）
+# 蓝筹股模式（无需 config 目录，使用内置 Top103 高分红蓝筹股）
 python dividend.py
 
 # 配置文件模式
