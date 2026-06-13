@@ -1,7 +1,7 @@
 {
   "_comment": "LLM 配置 — 环境变量 LLM_BASE_URL / LLM_MODEL / LLM_API_KEY 优先于下方字段，下方为默认回退值",
   "enabled": false,
-  "api_base": "https://api.openai.com/v1",
+  "api_base": "https://api.deepseek.com",
   "model": "deepseek-v4-pro[1m]",
   "max_tokens": 4000,
   "temperature": 0.3,
