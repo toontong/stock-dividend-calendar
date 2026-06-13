@@ -21,22 +21,21 @@ pip install -r requirements.txt
 
 ### 2. 配置股票
 
-编辑 `config/stocks.json`，无需改代码：
+编辑 `config/stocks.yml`，无需改代码：
 
-```json
-{
-  "stocks": [
-    {"code": "601398", "name": "工商银行"},
-    {"code": "600036", "name": "招商银行"},
-    {"code": "601088", "name": "中国神华"},
-    {"code": "600900", "name": "长江电力"}
-  ],
-  "industries": []
-}
+```yaml
+# 按行业分组，可自由增删（也支持扁平 stocks/industries 格式）
+银行:
+  - "601398": "工商银行"
+  - "600036": "招商银行"
+
+能源煤炭:
+  - "601088": "中国神华"
 ```
 
-- `stocks` — 手动指定股票
-- `industries` — 按申万行业自动拉取成分股，可为空 `[]`
+- 按行业板块分组，阅读直观
+- 也可使用扁平 `stocks` / `industries` 格式
+- 支持的板块见 `config/stocks.yml` 默认文件
 
 ### 3. 配置 CalDAV 凭据（可选）
 
@@ -80,7 +79,7 @@ pip install -r requirements.txt
 
 # 2. 上传文件
 scp dividend.py user@host:~/dividend-calendar/
-scp config/*.json user@host:~/dividend-calendar/config/
+scp config/*.yml user@host:~/dividend-calendar/config/
 
 # 3. 配置 crontab
 crontab -e
@@ -138,7 +137,7 @@ git push -u origin master
 |-------------|------|
 | `LLM_API_KEY` | API Key |
 
-> 只需 `LLM_API_KEY` 这一个 Secret 即可。`api_base`、`model` 等从 `config/llm.json` 读取（可安全提交仓库）。CI 检测到 `LLM_API_KEY` 存在则自动启用 `--analyze`。分析不会影响日历同步——日程先生效，分析成功后再回填 URL。
+> 只需 `LLM_API_KEY` 这一个 Secret 即可。`api_base`、`model` 等从 `config/llm.yml` 读取（可安全提交仓库）。CI 检测到 `LLM_API_KEY` 存在则自动启用 `--analyze`。分析不会影响日历同步——日程先生效，分析成功后再回填 URL。
 
 #### 步骤 3：配置 GitHub Pages
 
@@ -225,7 +224,7 @@ LLM 配置有两种方式，优先级从高到低：
 | 方式 | 适用场景 |
 |------|----------|
 | **环境变量** | 本地 `.env` 文件 或 GitHub Actions Secrets |
-| `config/llm.json` | 配置文件模式，环境变量未设置时的回退值 |
+| `config/llm.yml` | 配置文件模式，环境变量未设置时的回退值 |
 
 #### 环境变量（推荐）
 
@@ -235,7 +234,7 @@ export LLM_MODEL=gpt-4o-mini
 export LLM_API_KEY=sk-xxxx
 ```
 
-> 三个变量都设置后运行 `--analyze` 即可，无需 `llm.json`。支持任何 OpenAI-compatible 厂商：
+> 三个变量都设置后运行 `--analyze` 即可，无需 `llm.yml`。支持任何 OpenAI-compatible 厂商：
 >
 > | 厂商 | LLM_BASE_URL | 说明 |
 > |------|-------------|------|
@@ -244,15 +243,13 @@ export LLM_API_KEY=sk-xxxx
 > | Moonshot | `https://api.moonshot.cn/v1` | 需设置 LLM_API_KEY |
 > | Ollama | `http://localhost:11434/v1` | 本地模型，无需 API Key |
 
-#### 配置文件 `config/llm.json`
+#### 配置文件 `config/llm.yml`
 
-```json
-{
-  "enabled": true,
-  "api_base": "https://api.openai.com/v1",
-  "model": "gpt-4o-mini",
-  "pages_base_url": "https://<用户名>.github.io/<仓库名>"
-}
+```yaml
+enabled: true
+api_base: "https://api.openai.com/v1"
+model: "gpt-4o-mini"
+pages_base_url: "https://<用户名>.github.io/<仓库名>"
 ```
 
 - `enabled` — 设为 `true` 则每次运行自动分析，等同默认带 `--analyze`
@@ -268,7 +265,7 @@ python dividend.py -c config --force-analyze # 强制重新分析，忽略已有
 ```
 
 - 同一天同模型已有报告时自动跳过，加 `--force-analyze` 强制重分析
-- 分析报告写入 `output/analysis_{股票代码}.md`，随 GitHub Pages 公开
+- 分析报告写入 `output/analysis.html`（单文件含图表），随 GitHub Pages 公开
 
 ### ICS 订阅（备选）
 
@@ -280,15 +277,25 @@ https://<你的用户名>.github.io/<仓库名>/dividend.ics
 
 ## 配置参考
 
-### `config/stocks.json`
+### `config/stocks.yml`
 
-| 字段 | 类型 | 说明 |
-|------|------|------|
-| `version` | int | 配置版本（当前 1） |
-| `stocks` | array | `{"code": "代码", "name": "名称"}` |
-| `industries` | array | 行业名称，自动拉取成分股 |
+按行业板块分组管理股票，也支持扁平 `stocks`/`industries` 格式。
 
-### `config/calendar.json`
+```yaml
+银行:
+  - "601398": "工商银行"
+  - "600036": "招商银行"
+能源煤炭:
+  - "601088": "中国神华"
+```
+
+| 格式 | 说明 |
+|------|------|
+| 分组 `行业: [{"代码": "名称"}, ...]` | 按行业分组，可读性好 |
+| 扁平 `stocks: [{code, name}]` | 兼容旧格式，可选 |
+| `industries: [行业名]` | 自动拉取申万行业成分股 |
+
+### `config/calendar.yml`
 
 | 字段 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
@@ -302,14 +309,14 @@ https://<你的用户名>.github.io/<仓库名>/dividend.ics
 | `filter.min_progress` | string | `实施` | 分红进度下限 |
 | `filter.include_proposed` | bool | `false` | 是否包含预案 |
 
-### `config/llm.json`
+### `config/llm.yml`
 
 | 字段 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `enabled` | bool | `false` | 启用 LLM 分析（等同默认带 `--analyze`） |
 | `api_base` | string | `https://api.openai.com/v1` | API 端点（环境变量 `LLM_BASE_URL` 优先） |
 | `model` | string | `gpt-4o-mini` | 模型名（环境变量 `LLM_MODEL` 优先） |
-| `max_tokens` | int | `2000` | 最大输出 token |
+| `max_tokens` | int | `4000` | 最大输出 token |
 | `temperature` | float | `0.3` | 生成温度 |
 | `request_delay` | float | `1.0` | 请求间隔（秒），避免限流 |
 | `pages_base_url` | string | `""` | GitHub Pages 地址，填入后日程备注附带报告 URL |
@@ -320,9 +327,9 @@ https://<你的用户名>.github.io/<仓库名>/dividend.ics
 ```
 ├── dividend.py          # 唯一脚本（获取 + ICS + CalDAV）
 ├── config/
-│   ├── stocks.json      # 股票列表
-│   ├── calendar.json    # 输出和同步设置
-│   └── llm.json         # LLM分析配置（可选）
+│   ├── stocks.yml       # 股票列表（按行业分组）
+│   ├── calendar.yml     # 输出和同步设置
+│   └── llm.yml          # LLM分析配置（可选）
 ├── .github/workflows/   # GitHub Actions
 ├── requirements.txt
 └── README.md
@@ -338,10 +345,10 @@ https://<你的用户名>.github.io/<仓库名>/dividend.ics
 | ICS 数据不是最新 | GitHub Pages 有缓存，等几分钟 |
 | 行业拉取失败 | akshare 网络问题，手动在 `stocks[]` 中指定不受影响 |
 | LLM 分析不生效 | 检查 `LLM_API_KEY` 等三个环境变量是否都已设置，或 `--analyze` 标志是否加上 |
-| 分析结果不理想 | 修改 `config/llm.json` 中 `analysis_prompt` 模板，调整分析维度 |
-| 分析后日程无报告链接 | 确认 `config/llm.json` 的 `pages_base_url` 已正确填写 |
+| 分析结果不理想 | 修改 `config/llm.yml` 中 `analysis_prompt` 模板，调整分析维度 |
+| 分析后日程无报告链接 | 确认 `config/llm.yml` 的 `pages_base_url` 已正确填写 |
 | 非 OpenAI 厂商报错 | 确认 `LLM_BASE_URL` 指向厂商的 chat completions 端点（兼容 OpenAI 格式） |
-| GitHub Actions 无分析 | 检查 Actions Secrets 中 `LLM_API_KEY` 已添加、`config/llm.json` 中 `api_base`/`model` 已正确配置 |
+| GitHub Actions 无分析 | 检查 Actions Secrets 中 `LLM_API_KEY` 已添加、`config/llm.yml` 中 `api_base`/`model` 已正确配置 |
 
 ## License
 

@@ -1,0 +1,21 @@
+# A股分红日历 — 输出与同步配置
+version: 1
+
+# ICS 文件输出
+ics:
+  output_dir: "output"
+  filename: "dividend.ics"
+  prodid: "-//A-Stock Dividend Calendar//CN"
+
+# CalDAV 同步（WPS日历）
+caldav:
+  enabled: true
+  server_url: "https://caldav.wps.cn"
+  calendar_name: "A股分红"
+  ssl_verify: true
+
+# 分红事件过滤
+filter:
+  lookahead_days: 365           # 向前抓取天数
+  min_progress: "实施"           # 最低进度要求：实施/预案
+  include_proposed: false        # 是否包含预案阶段

@@ -1,0 +1,44 @@
+# LLM 股票分析配置（示例）
+# 复制为 llm.yml 后使用，环境变量优先于下方字段
+enabled: false
+api_base: "https://api.openai.com/v1"
+model: "gpt-4o-mini"
+max_tokens: 4000
+temperature: 0.3
+request_delay: 1.0
+pages_base_url: ""
+
+# 分析框架模板，支持占位符：{stock_code} {stock_name} {events_summary}
+analysis_prompt: |
+  你是一位资深A股投资分析师，专注于分红价值投资。请对以下股票进行全面深入的分红分析。
+
+  股票代码: {stock_code}
+  股票名称: {stock_name}
+
+  近期分红事件:
+  {events_summary}
+
+  请从以下维度进行深度分析，每个维度给出具体评级和依据：
+
+  1. 分红历史与稳定性 — 回顾近3-5年分红记录，评估连续性、增长趋势、派息比率波动
+  2. 股息率评估 — 结合当前股价估算股息率，与行业均值、银行理财收益率对比
+  3. 盈利能力与现金流 — 净利润趋势、ROE水平、经营性现金流对分红的覆盖度
+  4. 估值水平 — PE/PB分位数、与历史区间和同业对比
+  5. 成长性 — 营收/利润增速、行业前景、公司战略
+  6. 风险因素 — 行业政策、资产质量（银行股关注不良率/拨备）、经济周期敏感性
+  7. 综合投资建议 — 适合什么类型投资者，仓位建议，合理买入区间
+
+  最后严格按以下JSON格式输出（不要输出其他内容）：
+
+  {
+    "overall_score": <1-10数字，综合评分>,
+    "dividend_stability": "<稳定/较稳定/一般/波动/不稳定>",
+    "estimated_yield_pct": <数字，预估股息率百分比>,
+    "earnings_quality": "<优秀/良好/一般/较差>",
+    "valuation_level": "<低估/合理/偏高/高估>",
+    "growth_outlook": "<积极/稳健/平淡/承压>",
+    "risk_level": "<低/中/高>",
+    "analysis": "<800-1000字的完整分析文本，使用Markdown格式，包含小标题、关键数据>",
+    "highlights": ["<亮点1>", "<亮点2>", "<亮点3>"],
+    "risks": ["<风险1>", "<风险2>"]
+  }
