@@ -1,0 +1,28 @@
+# Environment secrets
+.env
+
+# CalDAV credentials (never commit)
+WPS CalDav账号.txt
+
+# Generated output
+output/dividend.ics
+bank_dividend.ics
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+.claude
+setup-claude-4-deepseek.ps1
+
+# OS
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "ics": {
+    "output_dir": "output",
+    "filename": "dividend.ics",
+    "prodid": "-//A-Stock Dividend Calendar//CN"
+  },
+  "caldav": {
+    "enabled": true,
+    "server_url": "https://caldav.wps.cn",
+    "calendar_name": "A股分红",
+    "ssl_verify": true
+  },
+  "filter": {
+    "lookahead_days": 365,
+    "min_progress": "实施",
+    "include_proposed": false
+  }
+}
