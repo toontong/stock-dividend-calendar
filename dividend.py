@@ -1273,7 +1273,7 @@ def main() -> int:
             print(f"  错误: {err}")
     print(f"{'='*50}")
 
-    return 2 if (cr and cr["errors"]) else 0
+    return 0  # CalDAV 错误不阻塞CI（ICS+HTML已生成）
 
 
 if __name__ == "__main__":
