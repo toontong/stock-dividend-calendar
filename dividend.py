@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 A股分红日历 — 抓取分红数据，生成ICS文件，可同步到CalDAV。
 
@@ -32,6 +33,11 @@ import yaml
 warnings.filterwarnings("ignore", category=FutureWarning, module="ics")
 from ics import Calendar, Event as IcsEvent
 from ics.alarm import DisplayAlarm
+
+# 强制 UTF-8 输出，避免 Windows 中文乱码
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
 
 logging.basicConfig(
     level=logging.INFO,
@@ -91,7 +97,7 @@ class Event:
     @property
     def description(self) -> str:
         parts = [f"股票: {self.name}({self.code})"]
-        parts.append(f"详情: {self.stock_url}")
+        # parts.append(f"详情: {self.stock_url}")
         if self.cash_dividend:
             per_share = self.cash_dividend / 10
             parts.append(f"每10股派{self.cash_dividend}元（每股派{per_share:.3f}元）")
@@ -444,8 +450,12 @@ def sync_caldav(
     server_url: str,
     calendar_name: str,
     ssl_verify: bool = True,
+    state_path: Optional[Path] = None,
 ) -> dict:
-    """同步事件到 CalDAV，返回 {created, updated, deleted, skipped, errors}"""
+    """同步事件到 CalDAV，返回 {created, updated, deleted, skipped, errors}
+
+    WPS CalDAV 不支持列出/删除事件，使用本地状态文件追踪已写入的 UID。
+    """
     result = {"created": 0, "updated": 0, "deleted": 0, "skipped": 0, "errors": []}
 
     try:
@@ -484,37 +494,64 @@ def sync_caldav(
         result["errors"].append("找不到也无法创建日历，且无可用日历")
         return result
 
-    existing = _caldav_index(cal_obj)
+    # 本地状态文件（WPS 不支持服务器端去重，本地追踪已写入的 UID）
+    if state_path is None:
+        state_path = Path("output") / ".caldav_state.json"
+    local_state = _caldav_load_state(state_path)
+    server_index = _caldav_index(cal_obj)
+
     new_uids = set()
     today = date.today()
 
     for ev in events:
         new_uids.add(ev.uid)
         try:
-            if ev.uid in existing:
-                if _caldav_changed(ev, existing[ev.uid]):
-                    _caldav_upsert(cal_obj, ev)
+            content_hash = _caldav_event_hash(ev)
+
+            # 服务器上有此 UID → 用服务器数据精确比较
+            if ev.uid in server_index:
+                caldav_ev = server_index[ev.uid]
+                if _caldav_changed(ev, caldav_ev):
+                    _caldav_upsert(cal_obj, ev, existing_event=caldav_ev)
                     result["updated"] += 1
+                    local_state[ev.uid] = content_hash
                 else:
                     result["skipped"] += 1
-            else:
-                _caldav_upsert(cal_obj, ev)
-                result["created"] += 1
+                continue
+
+            # 服务器上无此 UID → 用本地状态判断是否已写入过
+            if ev.uid in local_state and local_state[ev.uid] == content_hash:
+                logger.debug("跳过（本地状态匹配）: %s", ev.uid)
+                result["skipped"] += 1
+                continue
+
+            if ev.uid in local_state:
+                logger.info("事件内容已变更，重新写入: %s", ev.uid)
+
+            _caldav_upsert(cal_obj, ev)
+            result["created"] += 1
+            local_state[ev.uid] = content_hash
         except Exception as exc:
             result["errors"].append(str(exc))
             logger.error("CalDAV 同步 %s 失败: %s", ev.uid, exc)
 
-    for uid in list(existing):
+    # 清理本地状态中已不在当前事件列表中的 UID
+    for uid in list(local_state):
+        if uid not in new_uids:
+            del local_state[uid]
+
+    # 服务器端清理过期事件（标准 CalDAV 才有效，WPS 此处无操作）
+    for uid, caldav_ev in server_index.items():
         if uid not in new_uids:
             try:
-                cal_event = cal_obj.get_event_by_uid(uid)
-                dt = _caldav_get_date(cal_event)
+                dt = _caldav_get_date(caldav_ev)
                 if dt and dt < today:
-                    cal_event.delete()
+                    caldav_ev.delete()
                     result["deleted"] += 1
             except Exception:
                 pass
 
+    _caldav_save_state(state_path, local_state)
     return result
 
 
@@ -575,7 +612,8 @@ def _caldav_fallback(principal, wanted: str):
     return None
 
 
-def _caldav_index(cal_obj) -> dict[str, str]:
+def _caldav_index(cal_obj) -> dict[str, object]:
+    """返回 {uid: caldav_event}，直接保存 Event 对象用于后续删除，避免依赖 get_event_by_uid"""
     from icalendar import Calendar as ICal
     index = {}
     try:
@@ -589,20 +627,22 @@ def _caldav_index(cal_obj) -> dict[str, str]:
                 for comp in ical.walk("VEVENT"):
                     uid = str(comp.get("uid"))
                     if uid:
-                        index[uid] = raw
+                        index[uid] = ev
             except Exception:
                 continue
-    except Exception:
-        pass
+    except Exception as exc:
+        logger.warning("CalDAV 索引构建异常: %s", exc)
     return index
 
 
-def _caldav_upsert(cal_obj, ev: Event):
+def _caldav_upsert(cal_obj, ev: Event, existing_event=None):
+    """写入事件到 CalDAV。existing_event 非空时先删除旧事件（标准 CalDAV），WPS 忽略删除异常"""
     from icalendar import Calendar as ICal, Event as ICalEvent, Alarm
-    try:
-        cal_obj.get_event_by_uid(ev.uid).delete()
-    except Exception:
-        pass
+    if existing_event is not None:
+        try:
+            existing_event.delete()
+        except Exception:
+            pass
     ical = ICal()
     ical.add("prodid", PRODID)
     ical.add("version", "2.0")
@@ -621,10 +661,12 @@ def _caldav_upsert(cal_obj, ev: Event):
     cal_obj.add_event(ical.to_ical().decode("utf-8"))
 
 
-def _caldav_changed(ev: Event, raw_ics: str) -> bool:
+def _caldav_changed(ev: Event, caldav_event) -> bool:
+    """比较待写入事件与服务器上已有事件，判断是否需要更新"""
     from icalendar import Calendar as ICal
     try:
-        ical = ICal.from_ical(raw_ics)
+        raw = caldav_event.data
+        ical = ICal.from_ical(raw)
         for comp in ical.walk("VEVENT"):
             summary_changed = str(comp.get("summary", "")) != ev.summary
             desc_changed = str(comp.get("description", "")) != ev.description
@@ -645,6 +687,29 @@ def _caldav_get_date(cal_event) -> Optional[date]:
     except Exception:
         pass
     return None
+
+
+def _caldav_load_state(state_path: Path) -> dict[str, str]:
+    """加载本地同步状态 {uid: content_hash}"""
+    if state_path.exists():
+        try:
+            return dict(json.loads(state_path.read_text(encoding="utf-8")))
+        except Exception:
+            pass
+    return {}
+
+
+def _caldav_save_state(state_path: Path, state: dict[str, str]):
+    """保存本地同步状态"""
+    state_path.parent.mkdir(parents=True, exist_ok=True)
+    state_path.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _caldav_event_hash(ev: Event) -> str:
+    """事件内容指纹（summary + description 的 SHA256 前16位）"""
+    import hashlib
+    content = ev.summary + "\n" + ev.description
+    return hashlib.sha256(content.encode("utf-8")).hexdigest()[:16]
 
 
 # ═══════════════════════════════════════════════════════════
@@ -1256,13 +1321,15 @@ def main() -> int:
     output = generate_ics(events, cfg.output_path)
     logger.info("ICS 已写入: %s (%d 个事件)", output, len(events))
 
+    state_path = cfg.output_path.parent / ".caldav_state.json"
+
     cr = None
     if cfg.caldav_enabled:
         if not cfg.caldav_url:
             logger.warning("CalDAV server_url 未配置，跳过同步")
         else:
             logger.info("同步到 CalDAV ...")
-            cr = sync_caldav(events, cfg.caldav_url, cfg.caldav_calendar, cfg.caldav_ssl_verify)
+            cr = sync_caldav(events, cfg.caldav_url, cfg.caldav_calendar, cfg.caldav_ssl_verify, state_path)
 
     # ── Phase 2: LLM 分析（分析成功后再回填URL到日程）──
     analysis_count = 0
@@ -1291,10 +1358,10 @@ def main() -> int:
                 stock_events = [e for e in events if e.code == ev.code]
                 history = _fetch_dividend_history(stock)
 
-                # 检查是否已有今日同模型的分析
+                # 已有同模型分析则跳过（每只股票只分析一次，通过 GitHub Actions cache 持久化）
                 prev = meta.get(ev.code, {})
-                if not args.force_analyze and prev.get("date") == today_str and prev.get("model") == analyzer.model:
-                    logger.info("LLM 分析 %s(%s) 已有今日(%s)报告，跳过", ev.name, ev.code, today_str)
+                if not args.force_analyze and prev.get("cached_analysis") and prev.get("model") == analyzer.model:
+                    logger.info("LLM 分析 %s(%s) 已有报告（%s），跳过", ev.name, ev.code, prev.get("date", "?"))
                     skipped_count += 1
                     cached = prev.get("cached_analysis")
                     if cached:
@@ -1322,7 +1389,7 @@ def main() -> int:
             _save_analysis_meta(out_dir, meta)
 
             if skipped_count:
-                print(f"\nLLM 分析跳过: {skipped_count} 只（已有今日报告，加 --force-analyze 强制重分析）")
+                print(f"\nLLM 分析跳过: {skipped_count} 只（已有分析报告，加 --force-analyze 强制重分析）")
 
             # ── 生成统一 HTML 报告 ──
             if results:
@@ -1351,7 +1418,7 @@ def main() -> int:
                 logger.info("ICS 已更新: %s", output)
                 if cfg.caldav_enabled and cfg.caldav_url:
                     logger.info("回填 CalDAV 日程备注 ...")
-                    cr2 = sync_caldav(events, cfg.caldav_url, cfg.caldav_calendar, cfg.caldav_ssl_verify)
+                    cr2 = sync_caldav(events, cfg.caldav_url, cfg.caldav_calendar, cfg.caldav_ssl_verify, state_path)
                     if cr:
                         cr["updated"] += cr2["updated"]
                         cr["errors"].extend(cr2["errors"])
