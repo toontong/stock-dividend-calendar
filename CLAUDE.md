@@ -33,3 +33,4 @@
 - 触发：push 到 master（config/ dividend.py requirements.txt 变更时）
 - Secrets 仅放敏感值（CALDAV_USERNAME/PASSWORD、LLM_API_KEY），其他从 `config/*.yml` 读取
 - output/ 通过 `peaceiris/actions-gh-pages` 部署到 gh-pages 分支
+- 改到 `actions/cache` 缓存的数据结构时，同步递增 key 中的版本号（如 `v2` → `v3`），避免旧缓存与新代码不兼容

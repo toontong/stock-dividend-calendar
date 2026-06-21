@@ -38,9 +38,9 @@ jobs:
         id: cache-restore
         with:
           path: output/analysis_meta.json
-          key: analysis-meta-${{ runner.os }}-${{ github.run_id }}
+          key: analysis-meta-v1-${{ runner.os }}-${{ github.run_id }}
           restore-keys: |
-            analysis-meta-${{ runner.os }}-
+            analysis-meta-v1-${{ runner.os }}-
 
       - name: Run dividend calendar sync
         env:
@@ -59,7 +59,7 @@ jobs:
         if: always()
         with:
           path: output/analysis_meta.json
-          key: analysis-meta-${{ runner.os }}-${{ github.run_id }}
+          key: analysis-meta-v1-${{ runner.os }}-${{ github.run_id }}
 
       - name: Deploy ICS to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

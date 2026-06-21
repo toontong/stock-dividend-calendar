@@ -74,6 +74,7 @@ class Event:
     reg_date: Optional[date] = None
     announce_date: Optional[date] = None
     analysis_url: Optional[str] = None
+    analysis_error: Optional[str] = None
 
     @property
     def event_date(self) -> date:
@@ -114,8 +115,10 @@ class Event:
             parts.append(f"除权除息日: {self.ex_date}")
         else:
             parts.append(f"除权除息日: {self.ex_date}")
-        if self.analysis_url:
+        if self.analysis_url and not self.analysis_error:
             parts.append(f"\nLLM分析报告: {self.analysis_url}")
+        if self.analysis_error:
+            parts.append(f"\n⚠ LLM分析异常: {self.analysis_error}")
         return "\n".join(parts)
 
     @property
@@ -824,6 +827,11 @@ class StockAnalyzer:
                 logger.error("HTTP %s 响应: %s", status, text)
                 if status == 404:
                     logger.error("请检查 LLM_BASE_URL 是否正确（当前: %s → %s）", self.api_base, url)
+                # 提取 API 返回的错误信息（余额不足/限流等）
+                reason = _extract_api_error(status, text)
+                if reason:
+                    return f"[LLM错误: {reason}]"
+                return f"[LLM错误: HTTP {status}]"
             return f"[分析失败: {exc}]"
         except (KeyError, IndexError, ValueError) as exc:
             logger.error("LLM 响应解析失败: %s", exc)
@@ -858,6 +866,24 @@ def _parse_analysis(raw: str, stock: Stock) -> Optional[dict]:
             "highlights": [],
             "risks": [],
         }
+
+
+def _extract_api_error(status: int, body: str) -> str:
+    """从 LLM API 错误响应中提取可读原因（额度不足/限流等）"""
+    try:
+        data = json.loads(body)
+        err = data.get("error", {})
+        msg = err.get("message", "") or json.dumps(err)
+    except Exception:
+        msg = body[:200]
+    # 常见限流/欠费状态码
+    if status == 429:
+        return f"请求频率限制(429): {msg}"
+    if status == 402:
+        return f"账户欠费/额度不足(402): {msg}"
+    if status == 403:
+        return f"访问被拒(403): {msg}"
+    return f"HTTP {status}: {msg}" if msg else ""
 
 
 # ═══════════════════════════════════════════════════════════
@@ -1316,25 +1342,9 @@ def main() -> int:
         logger.info("无即将到来的分红事件")
         return 0
 
-    # ── Phase 1: 先创建日历（不含分析URL），确保日程先生效 ──
-    logger.info("生成 ICS ...")
-    output = generate_ics(events, cfg.output_path)
-    logger.info("ICS 已写入: %s (%d 个事件)", output, len(events))
-
-    state_path = cfg.output_path.parent / ".caldav_state.json"
-
-    cr = None
-    if cfg.caldav_enabled:
-        if not cfg.caldav_url:
-            logger.warning("CalDAV server_url 未配置，跳过同步")
-        else:
-            logger.info("同步到 CalDAV ...")
-            cr = sync_caldav(events, cfg.caldav_url, cfg.caldav_calendar, cfg.caldav_ssl_verify, state_path)
-
-    # ── Phase 2: LLM 分析（分析成功后再回填URL到日程）──
+    # ── Phase 1: LLM 分析优先（分析成功后将 analysis_url 注入事件）──
     analysis_count = 0
     skipped_count = 0
-    any_updated = False
     pages_base = (cfg.llm_config or {}).get("pages_base_url", "").rstrip("/")
     if args.analyze or (cfg.llm_enabled and cfg.llm_config is not None):
         if cfg.llm_config is None:
@@ -1348,7 +1358,7 @@ def main() -> int:
             out_dir = cfg.output_path.parent
             out_dir.mkdir(parents=True, exist_ok=True)
             meta = _load_analysis_meta(out_dir)
-            results: list[dict] = []  # 收集所有股票的结构化结果
+            results: list[dict] = []
 
             for ev in events:
                 if ev.code in seen:
@@ -1358,7 +1368,6 @@ def main() -> int:
                 stock_events = [e for e in events if e.code == ev.code]
                 history = _fetch_dividend_history(stock)
 
-                # 已有同模型分析则跳过（每只股票只分析一次，通过 GitHub Actions cache 持久化）
                 prev = meta.get(ev.code, {})
                 if not args.force_analyze and prev.get("cached_analysis") and prev.get("model") == analyzer.model:
                     logger.info("LLM 分析 %s(%s) 已有报告（%s），跳过", ev.name, ev.code, prev.get("date", "?"))
@@ -1374,16 +1383,25 @@ def main() -> int:
                 logger.info("LLM 分析 %s(%s) [历史%d条 行情%d日]", ev.name, ev.code, len(history), len(trades))
                 result = analyzer.analyze(stock, stock_events, history, trades, margin)
                 if result and result.get("analysis"):
-                    results.append({"stock": stock, "events": stock_events, "history": history, "analysis": result})
-                    meta[ev.code] = {"date": today_str, "model": analyzer.model, "cached_analysis": result, "history": _history_to_json(history)}
-                    analysis_count += 1
-                    preview = result.get("analysis", "")[:200].replace("\n", " ")
-                    recovery = result.get("recovery_probability", "?")
-                    rec_days = result.get("recovery_days", "?")
-                    print(f"\n--- {ev.name}({ev.code}) 评分:{result.get('overall_score','?')}/10 回补:{recovery} · {rec_days} ---")
-                    print(f"{preview}...")
+                    raw_analysis = result.get("analysis", "")
+                    is_error = raw_analysis.startswith(("[LLM错误:", "[分析失败:", "[解析失败:"))
+                    if is_error:
+                        # LLM API 错误（额度/限流等），注入事件备注，不缓存以便下次重试
+                        logger.warning("  %s(%s) LLM返回错误: %s", ev.name, ev.code, raw_analysis[:100])
+                        for se in events:
+                            if se.code == ev.code:
+                                se.analysis_error = raw_analysis
+                    else:
+                        results.append({"stock": stock, "events": stock_events, "history": history, "analysis": result})
+                        meta[ev.code] = {"date": today_str, "model": analyzer.model, "cached_analysis": result, "history": _history_to_json(history)}
+                        analysis_count += 1
+                        preview = raw_analysis[:200].replace("\n", " ")
+                        recovery = result.get("recovery_probability", "?")
+                        rec_days = result.get("recovery_days", "?")
+                        print(f"\n--- {ev.name}({ev.code}) 评分:{result.get('overall_score','?')}/10 回补:{recovery} · {rec_days} ---")
+                        print(f"{preview}...")
                 else:
-                    logger.warning("  %s(%s) 分析失败", ev.name, ev.code)
+                    logger.warning("  %s(%s) 分析失败，降级为纯分红日程", ev.name, ev.code)
                 time.sleep(analyzer.request_delay)
 
             _save_analysis_meta(out_dir, meta)
@@ -1391,47 +1409,43 @@ def main() -> int:
             if skipped_count:
                 print(f"\nLLM 分析跳过: {skipped_count} 只（已有分析报告，加 --force-analyze 强制重分析）")
 
-            # ── 生成统一 HTML 报告 ──
             if results:
                 html_path = out_dir / "analysis.html"
                 generate_analysis_html(results, html_path, today_str, analyzer.model)
                 logger.info("分析报告已写入: %s", html_path)
                 print(f"\nLLM 分析报告: {html_path}")
-                if not pages_base:
-                    logger.warning("未配置 pages_base_url，日程备注不会包含分析报告链接")
-                else:
+                if pages_base:
                     analysis_base_url = f"{pages_base}/analysis.html"
                     for r in results:
                         anchor = f"{analysis_base_url}#stock-{r['stock'].code}"
-                        matching = [e for e in events if e.code == r['stock'].code]
-                        for se in matching:
-                            se.analysis_url = anchor
-                    any_updated = True
+                        for se in events:
+                            if se.code == r['stock'].code:
+                                se.analysis_url = anchor
                     logger.info("已为 %d 只股票注入分析链接到日程备注", len(results))
             else:
                 logger.warning("无分析结果，跳过 HTML 报告")
 
-            # ── Phase 3: 分析成功后更新日程（回填分析URL）──
-            if any_updated:
-                logger.info("更新日历（含分析报告URL）...")
-                output = generate_ics(events, cfg.output_path)
-                logger.info("ICS 已更新: %s", output)
-                if cfg.caldav_enabled and cfg.caldav_url:
-                    logger.info("回填 CalDAV 日程备注 ...")
-                    cr2 = sync_caldav(events, cfg.caldav_url, cfg.caldav_calendar, cfg.caldav_ssl_verify, state_path)
-                    if cr:
-                        cr["updated"] += cr2["updated"]
-                        cr["errors"].extend(cr2["errors"])
-                    logger.info("CalDAV 回填完成: 更新=%d", cr2.get("updated", 0))
-                else:
-                    logger.info("ICS 已更新（无 CalDAV 同步）")
-            elif results:
-                logger.info("pages_base_url 未配置，日程无需更新")
+    # ── Phase 2: 生成 ICS + 同步 CalDAV（一次性写入，含分析URL或仅分红信息）──
+    logger.info("生成 ICS ...")
+    output = generate_ics(events, cfg.output_path)
+    logger.info("ICS 已写入: %s (%d 个事件)", output, len(events))
+
+    state_path = cfg.output_path.parent / ".caldav_state.json"
+
+    cr = None
+    if cfg.caldav_enabled:
+        if not cfg.caldav_url:
+            logger.warning("CalDAV server_url 未配置，跳过同步")
+        else:
+            logger.info("同步到 CalDAV ...")
+            cr = sync_caldav(events, cfg.caldav_url, cfg.caldav_calendar, cfg.caldav_ssl_verify, state_path)
 
     print(f"\n{'='*50}")
     print("A股分红日历 同步摘要")
     print(f"{'='*50}")
     print(f"  ICS : {output} ({len(events)} 个事件)")
+    if analysis_count:
+        print(f"  LLM : {analysis_count} 只分析成功")
     if cr:
         print(f"  CalDAV : 新建={cr['created']} 更新={cr['updated']} 删除={cr['deleted']} 跳过={cr['skipped']}")
         for err in cr["errors"]:
