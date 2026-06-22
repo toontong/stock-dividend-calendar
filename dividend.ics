@@ -4,6 +4,17 @@ PRODID:-//A-Stock Dividend Calendar//CN
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:贵州茅台(600519) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260625
+DESCRIPTION:股票: 贵州茅台(600519)\n每10股派280.242元（每股派28.024元）\n除权除息影响:\n  每股派现 28.024元 → 除息后股价约下调28.02元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600519
+SUMMARY:贵州茅台(600519) 分红股权登记
+UID:600519-2026-06-25@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:中国联通(600050) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -11,6 +22,17 @@ DTSTART;VALUE=DATE:20260625
 DESCRIPTION:股票: 中国联通(600050)\n每10股派0.523元（每股派0.052元）\n除权除息影响:\n  每股派现 0.052元 → 除息后股价约下调0.05元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600050
 SUMMARY:中国联通(600050) 分红股权登记
 UID:600050-2026-06-25@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:紫金矿业(601899) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260625
+DESCRIPTION:股票: 紫金矿业(601899)\n每10股派3.8元（每股派0.380元）\n除权除息影响:\n  每股派现 0.380元 → 除息后股价约下调0.38元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601899
+SUMMARY:紫金矿业(601899) 分红股权登记
+UID:601899-2026-06-25@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -33,6 +55,17 @@ DTSTART;VALUE=DATE:20260625
 DESCRIPTION:股票: 中远海控(601919)\n每10股派4.4元（每股派0.440元）\n除权除息影响:\n  每股派现 0.440元 → 除息后股价约下调0.44元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601919
 SUMMARY:中远海控(601919) 分红股权登记
 UID:601919-2026-06-25@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:中国石油(601857) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260625
+DESCRIPTION:股票: 中国石油(601857)\n每10股派2.5元（每股派0.250元）\n除权除息影响:\n  每股派现 0.250元 → 除息后股价约下调0.25元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601857
+SUMMARY:中国石油(601857) 分红股权登记
+UID:601857-2026-06-25@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
