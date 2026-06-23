@@ -15,6 +15,17 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:华能水电(600025) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260626
+DESCRIPTION:股票: 华能水电(600025)\n每10股派2.05元（每股派0.205元）\n除权除息影响:\n  每股派现 0.205元 → 除息后股价约下调0.20元\n进度: 实施\n股权登记日: 2026-06-26\n除权除息日: 2026-06-29\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600025
+SUMMARY:华能水电(600025) 分红股权登记
+UID:600025-2026-06-26@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:中国联通(600050) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -70,6 +81,17 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:洋河股份(002304) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260629
+DESCRIPTION:股票: 洋河股份(002304)\n每10股派14.7元（每股派1.470元）\n除权除息影响:\n  每股派现 1.470元 → 除息后股价约下调1.47元\n进度: 实施\n股权登记日: 2026-06-29\n除权除息日: 2026-06-30\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-002304
+SUMMARY:洋河股份(002304) 分红股权登记
+UID:002304-2026-06-29@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:华润微(688396) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -77,6 +99,17 @@ DTSTART;VALUE=DATE:20260624
 DESCRIPTION:股票: 华润微(688396)\n每10股派0.51元（每股派0.051元）\n除权除息影响:\n  每股派现 0.051元 → 除息后股价约下调0.05元\n进度: 实施\n股权登记日: 2026-06-24\n除权除息日: 2026-06-25\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688396
 SUMMARY:华润微(688396) 分红股权登记
 UID:688396-2026-06-24@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:美的集团(000333) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260626
+DESCRIPTION:股票: 美的集团(000333)\n每10股派38.0元（每股派3.800元）\n除权除息影响:\n  每股派现 3.800元 → 除息后股价约下调3.80元\n进度: 实施\n股权登记日: 2026-06-26\n除权除息日: 2026-06-29\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000333
+SUMMARY:美的集团(000333) 分红股权登记
+UID:000333-2026-06-26@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -121,5 +154,16 @@ DTSTART;VALUE=DATE:20260625
 DESCRIPTION:股票: 龙源电力(001289)\n每10股派0.625元（每股派0.062元）\n除权除息影响:\n  每股派现 0.062元 → 除息后股价约下调0.06元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-001289
 SUMMARY:龙源电力(001289) 分红股权登记
 UID:001289-2026-06-25@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:潞安环能(601699) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260629
+DESCRIPTION:股票: 潞安环能(601699)\n每10股派1.87元（每股派0.187元）\n除权除息影响:\n  每股派现 0.187元 → 除息后股价约下调0.19元\n进度: 实施\n股权登记日: 2026-06-29\n除权除息日: 2026-06-30\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601699
+SUMMARY:潞安环能(601699) 分红股权登记
+UID:601699-2026-06-29@astock-dividend
 END:VEVENT
 END:VCALENDAR
