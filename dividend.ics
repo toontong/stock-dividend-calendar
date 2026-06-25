@@ -37,17 +37,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:紫金矿业(601899) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260625
-DESCRIPTION:股票: 紫金矿业(601899)\n每10股派3.8元（每股派0.380元）\n除权除息影响:\n  每股派现 0.380元 → 除息后股价约下调0.38元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601899
-SUMMARY:紫金矿业(601899) 分红股权登记
-UID:601899-2026-06-25@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:陕西煤业(601225) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -103,6 +92,17 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:华能国际(600011) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260702
+DESCRIPTION:股票: 华能国际(600011)\n每10股派4.0元（每股派0.400元）\n除权除息影响:\n  每股派现 0.400元 → 除息后股价约下调0.40元\n进度: 实施\n股权登记日: 2026-07-02\n除权除息日: 2026-07-03\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600011
+SUMMARY:华能国际(600011) 分红股权登记
+UID:600011-2026-07-02@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:美的集团(000333) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -125,13 +125,13 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:温氏股份(300498) 分红股权登记
+DESCRIPTION:紫金矿业(601899) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260623
-DESCRIPTION:股票: 温氏股份(300498)\n每10股派2.0元（每股派0.200元）\n除权除息影响:\n  每股派现 0.200元 → 除息后股价约下调0.20元\n进度: 实施\n股权登记日: 2026-06-23\n除权除息日: 2026-06-24\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-300498
-SUMMARY:温氏股份(300498) 分红股权登记
-UID:300498-2026-06-23@astock-dividend
+DTSTART;VALUE=DATE:20260625
+DESCRIPTION:股票: 紫金矿业(601899)\n每10股派3.8元（每股派0.380元）\n除权除息影响:\n  每股派现 0.380元 → 除息后股价约下调0.38元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601899
+SUMMARY:紫金矿业(601899) 分红股权登记
+UID:601899-2026-06-25@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
