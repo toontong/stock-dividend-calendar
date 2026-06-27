@@ -4,17 +4,6 @@ PRODID:-//A-Stock Dividend Calendar//CN
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:贵州茅台(600519) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260625
-DESCRIPTION:股票: 贵州茅台(600519)\n每10股派280.242元（每股派28.024元）\n除权除息影响:\n  每股派现 28.024元 → 除息后股价约下调28.02元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600519
-SUMMARY:贵州茅台(600519) 分红股权登记
-UID:600519-2026-06-25@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:华能水电(600025) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -26,46 +15,35 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:中国联通(600050) 分红股权登记
+DESCRIPTION:中国银行(601988) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260625
-DESCRIPTION:股票: 中国联通(600050)\n每10股派0.523元（每股派0.052元）\n除权除息影响:\n  每股派现 0.052元 → 除息后股价约下调0.05元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600050
-SUMMARY:中国联通(600050) 分红股权登记
-UID:600050-2026-06-25@astock-dividend
+DTSTART;VALUE=DATE:20260709
+DESCRIPTION:股票: 中国银行(601988)\n每10股派1.169元（每股派0.117元）\n除权除息影响:\n  每股派现 0.117元 → 除息后股价约下调0.12元\n进度: 实施\n股权登记日: 2026-07-09\n除权除息日: 2026-07-10\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601988
+SUMMARY:中国银行(601988) 分红股权登记
+UID:601988-2026-07-09@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:陕西煤业(601225) 分红股权登记
+DESCRIPTION:海螺水泥(600585) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260625
-DESCRIPTION:股票: 陕西煤业(601225)\n每10股派9.09元（每股派0.909元）\n除权除息影响:\n  每股派现 0.909元 → 除息后股价约下调0.91元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601225
-SUMMARY:陕西煤业(601225) 分红股权登记
-UID:601225-2026-06-25@astock-dividend
+DTSTART;VALUE=DATE:20260701
+DESCRIPTION:股票: 海螺水泥(600585)\n每10股派6.1元（每股派0.610元）\n除权除息影响:\n  每股派现 0.610元 → 除息后股价约下调0.61元\n进度: 实施\n股权登记日: 2026-07-01\n除权除息日: 2026-07-02\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600585
+SUMMARY:海螺水泥(600585) 分红股权登记
+UID:600585-2026-07-01@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:中远海控(601919) 分红股权登记
+DESCRIPTION:中国人寿(601628) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260625
-DESCRIPTION:股票: 中远海控(601919)\n每10股派4.4元（每股派0.440元）\n除权除息影响:\n  每股派现 0.440元 → 除息后股价约下调0.44元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601919
-SUMMARY:中远海控(601919) 分红股权登记
-UID:601919-2026-06-25@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:中国石油(601857) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260625
-DESCRIPTION:股票: 中国石油(601857)\n每10股派2.5元（每股派0.250元）\n除权除息影响:\n  每股派现 0.250元 → 除息后股价约下调0.25元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601857
-SUMMARY:中国石油(601857) 分红股权登记
-UID:601857-2026-06-25@astock-dividend
+DTSTART;VALUE=DATE:20260708
+DESCRIPTION:股票: 中国人寿(601628)\n每10股派6.18元（每股派0.618元）\n除权除息影响:\n  每股派现 0.618元 → 除息后股价约下调0.62元\n进度: 实施\n股权登记日: 2026-07-08\n除权除息日: 2026-07-09\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601628
+SUMMARY:中国人寿(601628) 分红股权登记
+UID:601628-2026-07-08@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -81,13 +59,13 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:华润微(688396) 分红股权登记
+DESCRIPTION:民生银行(600016) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260624
-DESCRIPTION:股票: 华润微(688396)\n每10股派0.51元（每股派0.051元）\n除权除息影响:\n  每股派现 0.051元 → 除息后股价约下调0.05元\n进度: 实施\n股权登记日: 2026-06-24\n除权除息日: 2026-06-25\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688396
-SUMMARY:华润微(688396) 分红股权登记
-UID:688396-2026-06-24@astock-dividend
+DTSTART;VALUE=DATE:20260701
+DESCRIPTION:股票: 民生银行(600016)\n每10股派0.53元（每股派0.053元）\n除权除息影响:\n  每股派现 0.053元 → 除息后股价约下调0.05元\n进度: 实施\n股权登记日: 2026-07-01\n除权除息日: 2026-07-02\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600016
+SUMMARY:民生银行(600016) 分红股权登记
+UID:600016-2026-07-01@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -110,50 +88,6 @@ DTSTART;VALUE=DATE:20260626
 DESCRIPTION:股票: 美的集团(000333)\n每10股派38.0元（每股派3.800元）\n除权除息影响:\n  每股派现 3.800元 → 除息后股价约下调3.80元\n进度: 实施\n股权登记日: 2026-06-26\n除权除息日: 2026-06-29\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000333
 SUMMARY:美的集团(000333) 分红股权登记
 UID:000333-2026-06-26@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:宝钢股份(600019) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260624
-DESCRIPTION:股票: 宝钢股份(600019)\n每10股派1.8元（每股派0.180元）\n除权除息影响:\n  每股派现 0.180元 → 除息后股价约下调0.18元\n进度: 实施\n股权登记日: 2026-06-24\n除权除息日: 2026-06-25\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600019
-SUMMARY:宝钢股份(600019) 分红股权登记
-UID:600019-2026-06-24@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:紫金矿业(601899) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260625
-DESCRIPTION:股票: 紫金矿业(601899)\n每10股派3.8元（每股派0.380元）\n除权除息影响:\n  每股派现 0.380元 → 除息后股价约下调0.38元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601899
-SUMMARY:紫金矿业(601899) 分红股权登记
-UID:601899-2026-06-25@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:国泰君安(601211) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260625
-DESCRIPTION:股票: 国泰君安(601211)\n每10股派3.5元（每股派0.350元）\n除权除息影响:\n  每股派现 0.350元 → 除息后股价约下调0.35元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601211
-SUMMARY:国泰君安(601211) 分红股权登记
-UID:601211-2026-06-25@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:龙源电力(001289) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260625
-DESCRIPTION:股票: 龙源电力(001289)\n每10股派0.625元（每股派0.062元）\n除权除息影响:\n  每股派现 0.062元 → 除息后股价约下调0.06元\n进度: 实施\n股权登记日: 2026-06-25\n除权除息日: 2026-06-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-001289
-SUMMARY:龙源电力(001289) 分红股权登记
-UID:001289-2026-06-25@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
