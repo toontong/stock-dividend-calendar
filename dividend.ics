@@ -92,6 +92,17 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:金山办公(688111) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260702
+DESCRIPTION:股票: 金山办公(688111)\n每10股派12.5元（每股派1.250元）\n除权除息影响:\n  每股派现 1.250元 → 除息后股价约下调1.25元\n进度: 实施\n股权登记日: 2026-07-02\n除权除息日: 2026-07-03\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688111
+SUMMARY:金山办公(688111) 分红股权登记
+UID:688111-2026-07-02@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:潞安环能(601699) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
