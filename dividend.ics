@@ -4,17 +4,6 @@ PRODID:-//A-Stock Dividend Calendar//CN
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:华能水电(600025) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260626
-DESCRIPTION:股票: 华能水电(600025)\n每10股派2.05元（每股派0.205元）\n除权除息影响:\n  每股派现 0.205元 → 除息后股价约下调0.20元\n进度: 实施\n股权登记日: 2026-06-26\n除权除息日: 2026-06-29\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600025
-SUMMARY:华能水电(600025) 分红股权登记
-UID:600025-2026-06-26@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:中国银行(601988) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -77,17 +66,6 @@ DTSTART;VALUE=DATE:20260702
 DESCRIPTION:股票: 华能国际(600011)\n每10股派4.0元（每股派0.400元）\n除权除息影响:\n  每股派现 0.400元 → 除息后股价约下调0.40元\n进度: 实施\n股权登记日: 2026-07-02\n除权除息日: 2026-07-03\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600011
 SUMMARY:华能国际(600011) 分红股权登记
 UID:600011-2026-07-02@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:美的集团(000333) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260626
-DESCRIPTION:股票: 美的集团(000333)\n每10股派38.0元（每股派3.800元）\n除权除息影响:\n  每股派现 3.800元 → 除息后股价约下调3.80元\n进度: 实施\n股权登记日: 2026-06-26\n除权除息日: 2026-06-29\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000333
-SUMMARY:美的集团(000333) 分红股权登记
-UID:000333-2026-06-26@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
