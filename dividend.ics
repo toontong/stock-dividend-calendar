@@ -37,17 +37,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:洋河股份(002304) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260629
-DESCRIPTION:股票: 洋河股份(002304)\n每10股派14.7元（每股派1.470元）\n除权除息影响:\n  每股派现 1.470元 → 除息后股价约下调1.47元\n进度: 实施\n股权登记日: 2026-06-29\n除权除息日: 2026-06-30\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-002304
-SUMMARY:洋河股份(002304) 分红股权登记
-UID:002304-2026-06-29@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:民生银行(600016) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -77,16 +66,5 @@ DTSTART;VALUE=DATE:20260702
 DESCRIPTION:股票: 金山办公(688111)\n每10股派12.5元（每股派1.250元）\n除权除息影响:\n  每股派现 1.250元 → 除息后股价约下调1.25元\n进度: 实施\n股权登记日: 2026-07-02\n除权除息日: 2026-07-03\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688111
 SUMMARY:金山办公(688111) 分红股权登记
 UID:688111-2026-07-02@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:潞安环能(601699) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260629
-DESCRIPTION:股票: 潞安环能(601699)\n每10股派1.87元（每股派0.187元）\n除权除息影响:\n  每股派现 0.187元 → 除息后股价约下调0.19元\n进度: 实施\n股权登记日: 2026-06-29\n除权除息日: 2026-06-30\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601699
-SUMMARY:潞安环能(601699) 分红股权登记
-UID:601699-2026-06-29@astock-dividend
 END:VEVENT
 END:VCALENDAR
