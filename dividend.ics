@@ -15,28 +15,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:海螺水泥(600585) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260701
-DESCRIPTION:股票: 海螺水泥(600585)\n每10股派6.1元（每股派0.610元）\n除权除息影响:\n  每股派现 0.610元 → 除息后股价约下调0.61元\n进度: 实施\n股权登记日: 2026-07-01\n除权除息日: 2026-07-02\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600585
-SUMMARY:海螺水泥(600585) 分红股权登记
-UID:600585-2026-07-01@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:中国人寿(601628) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260708
-DESCRIPTION:股票: 中国人寿(601628)\n每10股派6.18元（每股派0.618元）\n除权除息影响:\n  每股派现 0.618元 → 除息后股价约下调0.62元\n进度: 实施\n股权登记日: 2026-07-08\n除权除息日: 2026-07-09\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601628
-SUMMARY:中国人寿(601628) 分红股权登记
-UID:601628-2026-07-08@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:民生银行(600016) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -48,23 +26,12 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:华能国际(600011) 分红股权登记
+DESCRIPTION:中国人寿(601628) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260702
-DESCRIPTION:股票: 华能国际(600011)\n每10股派4.0元（每股派0.400元）\n除权除息影响:\n  每股派现 0.400元 → 除息后股价约下调0.40元\n进度: 实施\n股权登记日: 2026-07-02\n除权除息日: 2026-07-03\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600011
-SUMMARY:华能国际(600011) 分红股权登记
-UID:600011-2026-07-02@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:金山办公(688111) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260702
-DESCRIPTION:股票: 金山办公(688111)\n每10股派12.5元（每股派1.250元）\n除权除息影响:\n  每股派现 1.250元 → 除息后股价约下调1.25元\n进度: 实施\n股权登记日: 2026-07-02\n除权除息日: 2026-07-03\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688111
-SUMMARY:金山办公(688111) 分红股权登记
-UID:688111-2026-07-02@astock-dividend
+DTSTART;VALUE=DATE:20260708
+DESCRIPTION:股票: 中国人寿(601628)\n每10股派6.18元（每股派0.618元）\n除权除息影响:\n  每股派现 0.618元 → 除息后股价约下调0.62元\n进度: 实施\n股权登记日: 2026-07-08\n除权除息日: 2026-07-09\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601628
+SUMMARY:中国人寿(601628) 分红股权登记
+UID:601628-2026-07-08@astock-dividend
 END:VEVENT
 END:VCALENDAR
