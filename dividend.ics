@@ -15,6 +15,39 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:招商银行(600036) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260709
+DESCRIPTION:股票: 招商银行(600036)\n每10股派10.03元（每股派1.003元）\n除权除息影响:\n  每股派现 1.003元 → 除息后股价约下调1.00元\n进度: 实施\n股权登记日: 2026-07-09\n除权除息日: 2026-07-10\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600036
+SUMMARY:招商银行(600036) 分红股权登记
+UID:600036-2026-07-09@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:江苏银行(600919) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260709
+DESCRIPTION:股票: 江苏银行(600919)\n每10股派2.332元（每股派0.233元）\n除权除息影响:\n  每股派现 0.233元 → 除息后股价约下调0.23元\n进度: 实施\n股权登记日: 2026-07-09\n除权除息日: 2026-07-10\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600919
+SUMMARY:江苏银行(600919) 分红股权登记
+UID:600919-2026-07-09@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:华鲁恒升(600426) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260709
+DESCRIPTION:股票: 华鲁恒升(600426)\n每10股派2.5元（每股派0.250元）\n转增3股\n除权除息影响:\n  每股派现 0.250元 → 除息后股价约下调0.25元\n  每10股→13股 (扩股30%) → 股价等比摊薄\n进度: 实施\n股权登记日: 2026-07-09\n除权除息日: 2026-07-10\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600426
+SUMMARY:华鲁恒升(600426) 分红股权登记
+UID:600426-2026-07-09@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:中国人寿(601628) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -48,17 +81,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:华能国际(600011) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260702
-DESCRIPTION:股票: 华能国际(600011)\n每10股派4.0元（每股派0.400元）\n除权除息影响:\n  每股派现 0.400元 → 除息后股价约下调0.40元\n进度: 实施\n股权登记日: 2026-07-02\n除权除息日: 2026-07-03\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600011
-SUMMARY:华能国际(600011) 分红股权登记
-UID:600011-2026-07-02@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:山东黄金(600547) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -70,17 +92,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:金山办公(688111) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260702
-DESCRIPTION:股票: 金山办公(688111)\n每10股派12.5元（每股派1.250元）\n除权除息影响:\n  每股派现 1.250元 → 除息后股价约下调1.25元\n进度: 实施\n股权登记日: 2026-07-02\n除权除息日: 2026-07-03\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688111
-SUMMARY:金山办公(688111) 分红股权登记
-UID:688111-2026-07-02@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:中国海油(600938) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -88,5 +99,16 @@ DTSTART;VALUE=DATE:20260709
 DESCRIPTION:股票: 中国海油(600938)\n每10股派4.7881元（每股派0.479元）\n除权除息影响:\n  每股派现 0.479元 → 除息后股价约下调0.48元\n进度: 实施\n股权登记日: 2026-07-09\n除权除息日: 2026-07-10\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600938
 SUMMARY:中国海油(600938) 分红股权登记
 UID:600938-2026-07-09@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:宁沪高速(600377) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260710
+DESCRIPTION:股票: 宁沪高速(600377)\n每10股派4.9元（每股派0.490元）\n除权除息影响:\n  每股派现 0.490元 → 除息后股价约下调0.49元\n进度: 实施\n股权登记日: 2026-07-10\n除权除息日: 2026-07-13\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600377
+SUMMARY:宁沪高速(600377) 分红股权登记
+UID:600377-2026-07-10@astock-dividend
 END:VEVENT
 END:VCALENDAR
