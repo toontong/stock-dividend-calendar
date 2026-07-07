@@ -2140,5 +2140,24 @@
       ]
     },
     "history": []
+  },
+  "601939": {
+    "date": "2026-07-07",
+    "model": "deepseek-v4-pro",
+    "cached_analysis": {
+      "overall_score": 0,
+      "dividend_stability": "未知",
+      "estimated_yield_pct": 0,
+      "earnings_quality": "未知",
+      "valuation_level": "未知",
+      "growth_outlook": "未知",
+      "risk_level": "未知",
+      "recovery_probability": "未知",
+      "recovery_days": "未知",
+      "analysis": "{\n  \"overall_score\": 7,\n  \"dividend_stability\": \"稳定\",\n  \"estimated_yield_pct\": 2.7,\n  \"earnings_quality\": \"优秀\",\n  \"valuation_level\": \"低估\",\n  \"growth_outlook\": \"平淡\",\n  \"risk_level\": \"中\",\n  \"recovery_probability\": \"中\",\n  \"recovery_days\": \"20-40个交易日\",\n  \"analysis\": \"## 除权后回补分析\\n本次除息每10股派2.029元，以除权前股价7.50元估算，除权后理论开盘参考价约为7.30元，下修幅度约2.7%。近10个交易日走势平稳，日均换手率约0.15%，成交量维持地量，融资余额基本持平，融券余额极低，显示多空分歧较小。银行股历来除权后填权周期偏长，在大盘风格配合时有望缓慢回补。综合判断，股价回补至7.50元的概率“中”，预计需要20-40个交易日，核心依据为低波动、低换手的筹码结构以及稳定的长期资金持仓，但缺乏强催化。\\n\\n## 分红历史与稳定性\\n建设银行近三年均实施现金分红，每股股利分别为0.32元（2023年）、0.30元（2024年）、0.25元（2025年），虽受净息差收窄及盈利增速放缓影响，绝对金额小幅下降，但每年均保持派息，派息比率维持在30%左右，未出现中断。分红连续性符合国有大行特征，稳定性评为“稳定”。下降趋势需关注未来盈利能否支撑分红水平。\\n\\n##",
+      "highlights": [],
+      "risks": []
+    },
+    "history": []
   }
 }
