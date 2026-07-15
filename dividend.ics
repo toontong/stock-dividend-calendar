@@ -4,6 +4,50 @@ PRODID:-//A-Stock Dividend Calendar//CN
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:中国建筑(601668) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260715
+DESCRIPTION:股票: 中国建筑(601668)\n每10股派2.718元（每股派0.272元）\n除权除息影响:\n  每股派现 0.272元 → 除息后股价约下调0.27元\n进度: 实施\n股权登记日: 2026-07-15\n除权除息日: 2026-07-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601668
+SUMMARY:中国建筑(601668) 分红股权登记
+UID:601668-2026-07-15@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:宁波银行(002142) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260715
+DESCRIPTION:股票: 宁波银行(002142)\n每10股派9.0元（每股派0.900元）\n除权除息影响:\n  每股派现 0.900元 → 除息后股价约下调0.90元\n进度: 实施\n股权登记日: 2026-07-15\n除权除息日: 2026-07-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-002142
+SUMMARY:宁波银行(002142) 分红股权登记
+UID:002142-2026-07-15@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:中国核电(601985) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260716
+DESCRIPTION:股票: 中国核电(601985)\n每10股派1.6元（每股派0.160元）\n除权除息影响:\n  每股派现 0.160元 → 除息后股价约下调0.16元\n进度: 实施\n股权登记日: 2026-07-16\n除权除息日: 2026-07-17\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601985
+SUMMARY:中国核电(601985) 分红股权登记
+UID:601985-2026-07-16@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:中联重科(000157) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260721
+DESCRIPTION:股票: 中联重科(000157)\n每10股派2.0元（每股派0.200元）\n除权除息影响:\n  每股派现 0.200元 → 除息后股价约下调0.20元\n进度: 实施\n股权登记日: 2026-07-21\n除权除息日: 2026-07-22\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000157
+SUMMARY:中联重科(000157) 分红股权登记
+UID:000157-2026-07-21@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:爱尔眼科(300015) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -11,28 +55,6 @@ DTSTART;VALUE=DATE:20260716
 DESCRIPTION:股票: 爱尔眼科(300015)\n每10股派1.0元（每股派0.100元）\n除权除息影响:\n  每股派现 0.100元 → 除息后股价约下调0.10元\n进度: 实施\n股权登记日: 2026-07-16\n除权除息日: 2026-07-17\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-300015
 SUMMARY:爱尔眼科(300015) 分红股权登记
 UID:300015-2026-07-16@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:三一重工(600031) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260716
-DESCRIPTION:股票: 三一重工(600031)\n每10股派1.8元（每股派0.180元）\n除权除息影响:\n  每股派现 0.180元 → 除息后股价约下调0.18元\n进度: 实施\n股权登记日: 2026-07-16\n除权除息日: 2026-07-17\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600031
-SUMMARY:三一重工(600031) 分红股权登记
-UID:600031-2026-07-16@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:五粮液(000858) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260715
-DESCRIPTION:股票: 五粮液(000858)\n每10股派25.7969元（每股派2.580元）\n除权除息影响:\n  每股派现 2.580元 → 除息后股价约下调2.58元\n进度: 实施\n股权登记日: 2026-07-15\n除权除息日: 2026-07-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000858
-SUMMARY:五粮液(000858) 分红股权登记
-UID:000858-2026-07-15@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -59,24 +81,13 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:中国太保(601601) 分红股权登记
+DESCRIPTION:中国船舶(600150) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260716
-DESCRIPTION:股票: 中国太保(601601)\n每10股派11.5元（每股派1.150元）\n除权除息影响:\n  每股派现 1.150元 → 除息后股价约下调1.15元\n进度: 实施\n股权登记日: 2026-07-16\n除权除息日: 2026-07-17\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601601
-SUMMARY:中国太保(601601) 分红股权登记
-UID:601601-2026-07-16@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:中国建筑(601668) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260715
-DESCRIPTION:股票: 中国建筑(601668)\n每10股派2.718元（每股派0.272元）\n除权除息影响:\n  每股派现 0.272元 → 除息后股价约下调0.27元\n进度: 实施\n股权登记日: 2026-07-15\n除权除息日: 2026-07-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601668
-SUMMARY:中国建筑(601668) 分红股权登记
-UID:601668-2026-07-15@astock-dividend
+DTSTART;VALUE=DATE:20260717
+DESCRIPTION:股票: 中国船舶(600150)\n每10股派3.65元（每股派0.365元）\n除权除息影响:\n  每股派现 0.365元 → 除息后股价约下调0.36元\n进度: 实施\n股权登记日: 2026-07-17\n除权除息日: 2026-07-20\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600150
+SUMMARY:中国船舶(600150) 分红股权登记
+UID:600150-2026-07-17@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -92,68 +103,13 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:中国船舶(600150) 分红股权登记
+DESCRIPTION:三峡能源(600905) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260717
-DESCRIPTION:股票: 中国船舶(600150)\n每10股派3.65元（每股派0.365元）\n除权除息影响:\n  每股派现 0.365元 → 除息后股价约下调0.36元\n进度: 实施\n股权登记日: 2026-07-17\n除权除息日: 2026-07-20\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600150
-SUMMARY:中国船舶(600150) 分红股权登记
-UID:600150-2026-07-17@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:中国铁建(601186) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260727
-DESCRIPTION:股票: 中国铁建(601186)\n每10股派3.0元（每股派0.300元）\n除权除息影响:\n  每股派现 0.300元 → 除息后股价约下调0.30元\n进度: 实施\n股权登记日: 2026-07-27\n除权除息日: 2026-07-28\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601186
-SUMMARY:中国铁建(601186) 分红股权登记
-UID:601186-2026-07-27@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:宁波银行(002142) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260715
-DESCRIPTION:股票: 宁波银行(002142)\n每10股派9.0元（每股派0.900元）\n除权除息影响:\n  每股派现 0.900元 → 除息后股价约下调0.90元\n进度: 实施\n股权登记日: 2026-07-15\n除权除息日: 2026-07-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-002142
-SUMMARY:宁波银行(002142) 分红股权登记
-UID:002142-2026-07-15@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:长江电力(600900) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260716
-DESCRIPTION:股票: 长江电力(600900)\n每10股派7.9元（每股派0.790元）\n除权除息影响:\n  每股派现 0.790元 → 除息后股价约下调0.79元\n进度: 实施\n股权登记日: 2026-07-16\n除权除息日: 2026-07-17\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600900
-SUMMARY:长江电力(600900) 分红股权登记
-UID:600900-2026-07-16@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:中国中铁(601390) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260730
-DESCRIPTION:股票: 中国中铁(601390)\n每10股派0.86元（每股派0.086元）\n除权除息影响:\n  每股派现 0.086元 → 除息后股价约下调0.09元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601390
-SUMMARY:中国中铁(601390) 分红股权登记
-UID:601390-2026-07-30@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:中国核电(601985) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260716
-DESCRIPTION:股票: 中国核电(601985)\n每10股派1.6元（每股派0.160元）\n除权除息影响:\n  每股派现 0.160元 → 除息后股价约下调0.16元\n进度: 实施\n股权登记日: 2026-07-16\n除权除息日: 2026-07-17\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601985
-SUMMARY:中国核电(601985) 分红股权登记
-UID:601985-2026-07-16@astock-dividend
+DTSTART;VALUE=DATE:20260721
+DESCRIPTION:股票: 三峡能源(600905)\n每10股派0.41元（每股派0.041元）\n除权除息影响:\n  每股派现 0.041元 → 除息后股价约下调0.04元\n进度: 实施\n股权登记日: 2026-07-21\n除权除息日: 2026-07-22\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600905
+SUMMARY:三峡能源(600905) 分红股权登记
+UID:600905-2026-07-21@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -169,13 +125,46 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:中联重科(000157) 分红股权登记
+DESCRIPTION:中国中铁(601390) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260721
-DESCRIPTION:股票: 中联重科(000157)\n每10股派2.0元（每股派0.200元）\n除权除息影响:\n  每股派现 0.200元 → 除息后股价约下调0.20元\n进度: 实施\n股权登记日: 2026-07-21\n除权除息日: 2026-07-22\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000157
-SUMMARY:中联重科(000157) 分红股权登记
-UID:000157-2026-07-21@astock-dividend
+DTSTART;VALUE=DATE:20260730
+DESCRIPTION:股票: 中国中铁(601390)\n每10股派0.86元（每股派0.086元）\n除权除息影响:\n  每股派现 0.086元 → 除息后股价约下调0.09元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601390
+SUMMARY:中国中铁(601390) 分红股权登记
+UID:601390-2026-07-30@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:中国铁建(601186) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260727
+DESCRIPTION:股票: 中国铁建(601186)\n每10股派3.0元（每股派0.300元）\n除权除息影响:\n  每股派现 0.300元 → 除息后股价约下调0.30元\n进度: 实施\n股权登记日: 2026-07-27\n除权除息日: 2026-07-28\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601186
+SUMMARY:中国铁建(601186) 分红股权登记
+UID:601186-2026-07-27@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:长江电力(600900) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260716
+DESCRIPTION:股票: 长江电力(600900)\n每10股派7.9元（每股派0.790元）\n除权除息影响:\n  每股派现 0.790元 → 除息后股价约下调0.79元\n进度: 实施\n股权登记日: 2026-07-16\n除权除息日: 2026-07-17\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600900
+SUMMARY:长江电力(600900) 分红股权登记
+UID:600900-2026-07-16@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:三一重工(600031) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260716
+DESCRIPTION:股票: 三一重工(600031)\n每10股派1.8元（每股派0.180元）\n除权除息影响:\n  每股派现 0.180元 → 除息后股价约下调0.18元\n进度: 实施\n股权登记日: 2026-07-16\n除权除息日: 2026-07-17\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600031
+SUMMARY:三一重工(600031) 分红股权登记
+UID:600031-2026-07-16@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -187,5 +176,38 @@ DTSTART;VALUE=DATE:20260716
 DESCRIPTION:股票: 古井贡酒(000596)\n每10股派34.0元（每股派3.400元）\n除权除息影响:\n  每股派现 3.400元 → 除息后股价约下调3.40元\n进度: 实施\n股权登记日: 2026-07-16\n除权除息日: 2026-07-17\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000596
 SUMMARY:古井贡酒(000596) 分红股权登记
 UID:000596-2026-07-16@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:五粮液(000858) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260715
+DESCRIPTION:股票: 五粮液(000858)\n每10股派25.7969元（每股派2.580元）\n除权除息影响:\n  每股派现 2.580元 → 除息后股价约下调2.58元\n进度: 实施\n股权登记日: 2026-07-15\n除权除息日: 2026-07-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000858
+SUMMARY:五粮液(000858) 分红股权登记
+UID:000858-2026-07-15@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:中国太保(601601) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260716
+DESCRIPTION:股票: 中国太保(601601)\n每10股派11.5元（每股派1.150元）\n除权除息影响:\n  每股派现 1.150元 → 除息后股价约下调1.15元\n进度: 实施\n股权登记日: 2026-07-16\n除权除息日: 2026-07-17\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601601
+SUMMARY:中国太保(601601) 分红股权登记
+UID:601601-2026-07-16@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:上港集团(600018) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260722
+DESCRIPTION:股票: 上港集团(600018)\n每10股派1.45元（每股派0.145元）\n除权除息影响:\n  每股派现 0.145元 → 除息后股价约下调0.14元\n进度: 实施\n股权登记日: 2026-07-22\n除权除息日: 2026-07-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600018
+SUMMARY:上港集团(600018) 分红股权登记
+UID:600018-2026-07-22@astock-dividend
 END:VEVENT
 END:VCALENDAR
