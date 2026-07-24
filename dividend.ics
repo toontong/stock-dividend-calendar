@@ -4,17 +4,6 @@ PRODID:-//A-Stock Dividend Calendar//CN
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:兖矿能源(600188) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260723
-DESCRIPTION:股票: 兖矿能源(600188)\n每10股派3.2元（每股派0.320元）\n除权除息影响:\n  每股派现 0.320元 → 除息后股价约下调0.32元\n进度: 实施\n股权登记日: 2026-07-23\n除权除息日: 2026-07-24\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600188
-SUMMARY:兖矿能源(600188) 分红股权登记
-UID:600188-2026-07-23@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:光大银行(601818) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -26,13 +15,46 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:澜起科技(688008) 分红股权登记
+DESCRIPTION:兖矿能源(600188) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260728
-DESCRIPTION:股票: 澜起科技(688008)\n每10股派3.9元（每股派0.390元）\n除权除息影响:\n  每股派现 0.390元 → 除息后股价约下调0.39元\n进度: 实施\n股权登记日: 2026-07-28\n除权除息日: 2026-07-29\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688008
-SUMMARY:澜起科技(688008) 分红股权登记
-UID:688008-2026-07-28@astock-dividend
+DTSTART;VALUE=DATE:20260723
+DESCRIPTION:股票: 兖矿能源(600188)\n每10股派3.2元（每股派0.320元）\n除权除息影响:\n  每股派现 0.320元 → 除息后股价约下调0.32元\n进度: 实施\n股权登记日: 2026-07-23\n除权除息日: 2026-07-24\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600188
+SUMMARY:兖矿能源(600188) 分红股权登记
+UID:600188-2026-07-23@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:浙能电力(600023) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260729
+DESCRIPTION:股票: 浙能电力(600023)\n每10股派2.8元（每股派0.280元）\n除权除息影响:\n  每股派现 0.280元 → 除息后股价约下调0.28元\n进度: 实施\n股权登记日: 2026-07-29\n除权除息日: 2026-07-30\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600023
+SUMMARY:浙能电力(600023) 分红股权登记
+UID:600023-2026-07-29@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:比亚迪(002594) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260730
+DESCRIPTION:股票: 比亚迪(002594)\n每10股派3.58元（每股派0.358元）\n除权除息影响:\n  每股派现 0.358元 → 除息后股价约下调0.36元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-002594
+SUMMARY:比亚迪(002594) 分红股权登记
+UID:002594-2026-07-30@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:川投能源(600674) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260730
+DESCRIPTION:股票: 川投能源(600674)\n每10股派5.0元（每股派0.500元）\n除权除息影响:\n  每股派现 0.500元 → 除息后股价约下调0.50元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600674
+SUMMARY:川投能源(600674) 分红股权登记
+UID:600674-2026-07-30@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -59,6 +81,28 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:工业富联(601138) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260731
+DESCRIPTION:股票: 工业富联(601138)\n每10股派6.5元（每股派0.650元）\n除权除息影响:\n  每股派现 0.650元 → 除息后股价约下调0.65元\n进度: 实施\n股权登记日: 2026-07-31\n除权除息日: 2026-08-03\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601138
+SUMMARY:工业富联(601138) 分红股权登记
+UID:601138-2026-07-31@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:中国人保(601319) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260730
+DESCRIPTION:股票: 中国人保(601319)\n每10股派1.45元（每股派0.145元）\n除权除息影响:\n  每股派现 0.145元 → 除息后股价约下调0.14元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601319
+SUMMARY:中国人保(601319) 分红股权登记
+UID:601319-2026-07-30@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:中国通号(688009) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -70,24 +114,24 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:上港集团(600018) 分红股权登记
+DESCRIPTION:片仔癀(600436) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260722
-DESCRIPTION:股票: 上港集团(600018)\n每10股派1.45元（每股派0.145元）\n除权除息影响:\n  每股派现 0.145元 → 除息后股价约下调0.14元\n进度: 实施\n股权登记日: 2026-07-22\n除权除息日: 2026-07-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600018
-SUMMARY:上港集团(600018) 分红股权登记
-UID:600018-2026-07-22@astock-dividend
+DTSTART;VALUE=DATE:20260730
+DESCRIPTION:股票: 片仔癀(600436)\n每10股派15.7元（每股派1.570元）\n除权除息影响:\n  每股派现 1.570元 → 除息后股价约下调1.57元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600436
+SUMMARY:片仔癀(600436) 分红股权登记
+UID:600436-2026-07-30@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:中国交建(601800) 分红股权登记
+DESCRIPTION:澜起科技(688008) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260722
-DESCRIPTION:股票: 中国交建(601800)\n每10股派0.7793元（每股派0.078元）\n除权除息影响:\n  每股派现 0.078元 → 除息后股价约下调0.08元\n进度: 实施\n股权登记日: 2026-07-22\n除权除息日: 2026-07-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601800
-SUMMARY:中国交建(601800) 分红股权登记
-UID:601800-2026-07-22@astock-dividend
+DTSTART;VALUE=DATE:20260728
+DESCRIPTION:股票: 澜起科技(688008)\n每10股派3.9元（每股派0.390元）\n除权除息影响:\n  每股派现 0.390元 → 除息后股价约下调0.39元\n进度: 实施\n股权登记日: 2026-07-28\n除权除息日: 2026-07-29\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688008
+SUMMARY:澜起科技(688008) 分红股权登记
+UID:688008-2026-07-28@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
