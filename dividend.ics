@@ -15,17 +15,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:兖矿能源(600188) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260723
-DESCRIPTION:股票: 兖矿能源(600188)\n每10股派3.2元（每股派0.320元）\n除权除息影响:\n  每股派现 0.320元 → 除息后股价约下调0.32元\n进度: 实施\n股权登记日: 2026-07-23\n除权除息日: 2026-07-24\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600188
-SUMMARY:兖矿能源(600188) 分红股权登记
-UID:600188-2026-07-23@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:浙能电力(600023) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
