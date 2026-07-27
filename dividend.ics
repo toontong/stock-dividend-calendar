@@ -26,6 +26,17 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:山西汾酒(600809) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260730
+DESCRIPTION:股票: 山西汾酒(600809)\n每10股派65.6元（每股派6.560元）\n除权除息影响:\n  每股派现 6.560元 → 除息后股价约下调6.56元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600809
+SUMMARY:山西汾酒(600809) 分红股权登记
+UID:600809-2026-07-30@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:比亚迪(002594) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
