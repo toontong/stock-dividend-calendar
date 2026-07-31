@@ -4,28 +4,6 @@ PRODID:-//A-Stock Dividend Calendar//CN
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:光大银行(601818) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260729
-DESCRIPTION:股票: 光大银行(601818)\n每10股派0.7元（每股派0.070元）\n除权除息影响:\n  每股派现 0.070元 → 除息后股价约下调0.07元\n进度: 实施\n股权登记日: 2026-07-29\n除权除息日: 2026-07-30\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601818
-SUMMARY:光大银行(601818) 分红股权登记
-UID:601818-2026-07-29@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:浙能电力(600023) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260729
-DESCRIPTION:股票: 浙能电力(600023)\n每10股派2.8元（每股派0.280元）\n除权除息影响:\n  每股派现 0.280元 → 除息后股价约下调0.28元\n进度: 实施\n股权登记日: 2026-07-29\n除权除息日: 2026-07-30\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600023
-SUMMARY:浙能电力(600023) 分红股权登记
-UID:600023-2026-07-29@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:山西汾酒(600809) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -48,13 +26,24 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:川投能源(600674) 分红股权登记
+DESCRIPTION:新华保险(601336) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260730
-DESCRIPTION:股票: 川投能源(600674)\n每10股派5.0元（每股派0.500元）\n除权除息影响:\n  每股派现 0.500元 → 除息后股价约下调0.50元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600674
-SUMMARY:川投能源(600674) 分红股权登记
-UID:600674-2026-07-30@astock-dividend
+DTSTART;VALUE=DATE:20260806
+DESCRIPTION:股票: 新华保险(601336)\n每10股派20.6元（每股派2.060元）\n除权除息影响:\n  每股派现 2.060元 → 除息后股价约下调2.06元\n进度: 实施\n股权登记日: 2026-08-06\n除权除息日: 2026-08-07\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601336
+SUMMARY:新华保险(601336) 分红股权登记
+UID:601336-2026-08-06@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:时代电气(688187) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260806
+DESCRIPTION:股票: 时代电气(688187)\n每10股派6.8元（每股派0.680元）\n除权除息影响:\n  每股派现 0.680元 → 除息后股价约下调0.68元\n进度: 实施\n股权登记日: 2026-08-06\n除权除息日: 2026-08-07\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688187
+SUMMARY:时代电气(688187) 分红股权登记
+UID:688187-2026-08-06@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -70,13 +59,13 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:中国铁建(601186) 分红股权登记
+DESCRIPTION:广发证券(000776) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260727
-DESCRIPTION:股票: 中国铁建(601186)\n每10股派3.0元（每股派0.300元）\n除权除息影响:\n  每股派现 0.300元 → 除息后股价约下调0.30元\n进度: 实施\n股权登记日: 2026-07-27\n除权除息日: 2026-07-28\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601186
-SUMMARY:中国铁建(601186) 分红股权登记
-UID:601186-2026-07-27@astock-dividend
+DTSTART;VALUE=DATE:20260806
+DESCRIPTION:股票: 广发证券(000776)\n每10股派5.0元（每股派0.500元）\n除权除息影响:\n  每股派现 0.500元 → 除息后股价约下调0.50元\n进度: 实施\n股权登记日: 2026-08-06\n除权除息日: 2026-08-07\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000776
+SUMMARY:广发证券(000776) 分红股权登记
+UID:000776-2026-08-06@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -125,23 +114,23 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:澜起科技(688008) 分红股权登记
+DESCRIPTION:川投能源(600674) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260728
-DESCRIPTION:股票: 澜起科技(688008)\n每10股派3.9元（每股派0.390元）\n除权除息影响:\n  每股派现 0.390元 → 除息后股价约下调0.39元\n进度: 实施\n股权登记日: 2026-07-28\n除权除息日: 2026-07-29\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688008
-SUMMARY:澜起科技(688008) 分红股权登记
-UID:688008-2026-07-28@astock-dividend
+DTSTART;VALUE=DATE:20260730
+DESCRIPTION:股票: 川投能源(600674)\n每10股派5.0元（每股派0.500元）\n除权除息影响:\n  每股派现 0.500元 → 除息后股价约下调0.50元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600674
+SUMMARY:川投能源(600674) 分红股权登记
+UID:600674-2026-07-30@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:凯赛生物(688065) 分红股权登记
+DESCRIPTION:国投电力(600886) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260728
-DESCRIPTION:股票: 凯赛生物(688065)\n每10股派4.5元（每股派0.450元）\n除权除息影响:\n  每股派现 0.450元 → 除息后股价约下调0.45元\n进度: 实施\n股权登记日: 2026-07-28\n除权除息日: 2026-07-29\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688065
-SUMMARY:凯赛生物(688065) 分红股权登记
-UID:688065-2026-07-28@astock-dividend
+DTSTART;VALUE=DATE:20260806
+DESCRIPTION:股票: 国投电力(600886)\n每10股派5.081元（每股派0.508元）\n除权除息影响:\n  每股派现 0.508元 → 除息后股价约下调0.51元\n进度: 实施\n股权登记日: 2026-08-06\n除权除息日: 2026-08-07\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600886
+SUMMARY:国投电力(600886) 分红股权登记
+UID:600886-2026-08-06@astock-dividend
 END:VEVENT
 END:VCALENDAR
