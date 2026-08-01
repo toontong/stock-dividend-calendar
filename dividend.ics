@@ -4,24 +4,13 @@ PRODID:-//A-Stock Dividend Calendar//CN
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:山西汾酒(600809) 分红股权登记
+DESCRIPTION:上汽集团(600104) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260730
-DESCRIPTION:股票: 山西汾酒(600809)\n每10股派65.6元（每股派6.560元）\n除权除息影响:\n  每股派现 6.560元 → 除息后股价约下调6.56元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600809
-SUMMARY:山西汾酒(600809) 分红股权登记
-UID:600809-2026-07-30@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:比亚迪(002594) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260730
-DESCRIPTION:股票: 比亚迪(002594)\n每10股派3.58元（每股派0.358元）\n除权除息影响:\n  每股派现 0.358元 → 除息后股价约下调0.36元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-002594
-SUMMARY:比亚迪(002594) 分红股权登记
-UID:002594-2026-07-30@astock-dividend
+DTSTART;VALUE=DATE:20260806
+DESCRIPTION:股票: 上汽集团(600104)\n每10股派2.66元（每股派0.266元）\n除权除息影响:\n  每股派现 0.266元 → 除息后股价约下调0.27元\n进度: 实施\n股权登记日: 2026-08-06\n除权除息日: 2026-08-07\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600104
+SUMMARY:上汽集团(600104) 分红股权登记
+UID:600104-2026-08-06@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -48,17 +37,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:中国中铁(601390) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260730
-DESCRIPTION:股票: 中国中铁(601390)\n每10股派0.86元（每股派0.086元）\n除权除息影响:\n  每股派现 0.086元 → 除息后股价约下调0.09元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601390
-SUMMARY:中国中铁(601390) 分红股权登记
-UID:601390-2026-07-30@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:广发证券(000776) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -77,50 +55,6 @@ DTSTART;VALUE=DATE:20260731
 DESCRIPTION:股票: 工业富联(601138)\n每10股派6.5元（每股派0.650元）\n除权除息影响:\n  每股派现 0.650元 → 除息后股价约下调0.65元\n进度: 实施\n股权登记日: 2026-07-31\n除权除息日: 2026-08-03\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601138
 SUMMARY:工业富联(601138) 分红股权登记
 UID:601138-2026-07-31@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:中国人保(601319) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260730
-DESCRIPTION:股票: 中国人保(601319)\n每10股派1.45元（每股派0.145元）\n除权除息影响:\n  每股派现 0.145元 → 除息后股价约下调0.14元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601319
-SUMMARY:中国人保(601319) 分红股权登记
-UID:601319-2026-07-30@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:中国通号(688009) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260730
-DESCRIPTION:股票: 中国通号(688009)\n每10股派1.7元（每股派0.170元）\n除权除息影响:\n  每股派现 0.170元 → 除息后股价约下调0.17元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688009
-SUMMARY:中国通号(688009) 分红股权登记
-UID:688009-2026-07-30@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:片仔癀(600436) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260730
-DESCRIPTION:股票: 片仔癀(600436)\n每10股派15.7元（每股派1.570元）\n除权除息影响:\n  每股派现 1.570元 → 除息后股价约下调1.57元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600436
-SUMMARY:片仔癀(600436) 分红股权登记
-UID:600436-2026-07-30@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:川投能源(600674) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260730
-DESCRIPTION:股票: 川投能源(600674)\n每10股派5.0元（每股派0.500元）\n除权除息影响:\n  每股派现 0.500元 → 除息后股价约下调0.50元\n进度: 实施\n股权登记日: 2026-07-30\n除权除息日: 2026-07-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600674
-SUMMARY:川投能源(600674) 分红股权登记
-UID:600674-2026-07-30@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
