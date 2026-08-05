@@ -59,6 +59,17 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:京沪高铁(601816) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260810
+DESCRIPTION:股票: 京沪高铁(601816)\n每10股派0.954元（每股派0.095元）\n除权除息影响:\n  每股派现 0.095元 → 除息后股价约下调0.10元\n进度: 实施\n股权登记日: 2026-08-10\n除权除息日: 2026-08-11\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601816
+SUMMARY:京沪高铁(601816) 分红股权登记
+UID:601816-2026-08-10@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:国投电力(600886) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
