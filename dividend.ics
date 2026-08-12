@@ -4,78 +4,12 @@ PRODID:-//A-Stock Dividend Calendar//CN
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:上汽集团(600104) 分红股权登记
+DESCRIPTION:中国铝业(601600) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260806
-DESCRIPTION:股票: 上汽集团(600104)\n每10股派2.66元（每股派0.266元）\n除权除息影响:\n  每股派现 0.266元 → 除息后股价约下调0.27元\n进度: 实施\n股权登记日: 2026-08-06\n除权除息日: 2026-08-07\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600104
-SUMMARY:上汽集团(600104) 分红股权登记
-UID:600104-2026-08-06@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:时代电气(688187) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260806
-DESCRIPTION:股票: 时代电气(688187)\n每10股派6.8元（每股派0.680元）\n除权除息影响:\n  每股派现 0.680元 → 除息后股价约下调0.68元\n进度: 实施\n股权登记日: 2026-08-06\n除权除息日: 2026-08-07\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688187
-SUMMARY:时代电气(688187) 分红股权登记
-UID:688187-2026-08-06@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:新华保险(601336) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260806
-DESCRIPTION:股票: 新华保险(601336)\n每10股派20.6元（每股派2.060元）\n除权除息影响:\n  每股派现 2.060元 → 除息后股价约下调2.06元\n进度: 实施\n股权登记日: 2026-08-06\n除权除息日: 2026-08-07\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601336
-SUMMARY:新华保险(601336) 分红股权登记
-UID:601336-2026-08-06@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:广发证券(000776) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260806
-DESCRIPTION:股票: 广发证券(000776)\n每10股派5.0元（每股派0.500元）\n除权除息影响:\n  每股派现 0.500元 → 除息后股价约下调0.50元\n进度: 实施\n股权登记日: 2026-08-06\n除权除息日: 2026-08-07\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000776
-SUMMARY:广发证券(000776) 分红股权登记
-UID:000776-2026-08-06@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:宁德时代(300750) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260807
-DESCRIPTION:股票: 宁德时代(300750)\n每10股派14.11元（每股派1.411元）\n除权除息影响:\n  每股派现 1.411元 → 除息后股价约下调1.41元\n进度: 实施\n股权登记日: 2026-08-07\n除权除息日: 2026-08-10\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-300750
-SUMMARY:宁德时代(300750) 分红股权登记
-UID:300750-2026-08-07@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:京沪高铁(601816) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260810
-DESCRIPTION:股票: 京沪高铁(601816)\n每10股派0.954元（每股派0.095元）\n除权除息影响:\n  每股派现 0.095元 → 除息后股价约下调0.10元\n进度: 实施\n股权登记日: 2026-08-10\n除权除息日: 2026-08-11\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601816
-SUMMARY:京沪高铁(601816) 分红股权登记
-UID:601816-2026-08-10@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:国投电力(600886) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260806
-DESCRIPTION:股票: 国投电力(600886)\n每10股派5.081元（每股派0.508元）\n除权除息影响:\n  每股派现 0.508元 → 除息后股价约下调0.51元\n进度: 实施\n股权登记日: 2026-08-06\n除权除息日: 2026-08-07\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600886
-SUMMARY:国投电力(600886) 分红股权登记
-UID:600886-2026-08-06@astock-dividend
+DTSTART;VALUE=DATE:20260813
+DESCRIPTION:股票: 中国铝业(601600)\n每10股派1.47元（每股派0.147元）\n除权除息影响:\n  每股派现 0.147元 → 除息后股价约下调0.15元\n进度: 实施\n股权登记日: 2026-08-13\n除权除息日: 2026-08-14\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601600
+SUMMARY:中国铝业(601600) 分红股权登记
+UID:601600-2026-08-13@astock-dividend
 END:VEVENT
 END:VCALENDAR
