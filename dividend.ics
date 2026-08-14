@@ -4,6 +4,17 @@ PRODID:-//A-Stock Dividend Calendar//CN
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:山东黄金(600547) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260820
+DESCRIPTION:股票: 山东黄金(600547)\n每10股派1.0元（每股派0.100元）\n除权除息影响:\n  每股派现 0.100元 → 除息后股价约下调0.10元\n进度: 实施\n股权登记日: 2026-08-20\n除权除息日: 2026-08-21\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600547
+SUMMARY:山东黄金(600547) 分红股权登记
+UID:600547-2026-08-20@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:紫金矿业(601899) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
