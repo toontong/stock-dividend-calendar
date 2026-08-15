@@ -15,13 +15,13 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:紫金矿业(601899) 分红股权登记
+DESCRIPTION:海尔智家(600690) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
 DTSTART;VALUE=DATE:20260820
-DESCRIPTION:股票: 紫金矿业(601899)\n每10股派4.2元（每股派0.420元）\n除权除息影响:\n  每股派现 0.420元 → 除息后股价约下调0.42元\n进度: 实施\n股权登记日: 2026-08-20\n除权除息日: 2026-08-21\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601899
-SUMMARY:紫金矿业(601899) 分红股权登记
-UID:601899-2026-08-20@astock-dividend
+DESCRIPTION:股票: 海尔智家(600690)\n每10股派8.9151元（每股派0.892元）\n除权除息影响:\n  每股派现 0.892元 → 除息后股价约下调0.89元\n进度: 实施\n股权登记日: 2026-08-20\n除权除息日: 2026-08-21
+SUMMARY:海尔智家(600690) 分红股权登记
+UID:600690-2026-08-20@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -37,12 +37,12 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:中国铝业(601600) 分红股权登记
+DESCRIPTION:紫金矿业(601899) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260813
-DESCRIPTION:股票: 中国铝业(601600)\n每10股派1.47元（每股派0.147元）\n除权除息影响:\n  每股派现 0.147元 → 除息后股价约下调0.15元\n进度: 实施\n股权登记日: 2026-08-13\n除权除息日: 2026-08-14\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601600
-SUMMARY:中国铝业(601600) 分红股权登记
-UID:601600-2026-08-13@astock-dividend
+DTSTART;VALUE=DATE:20260820
+DESCRIPTION:股票: 紫金矿业(601899)\n每10股派4.2元（每股派0.420元）\n除权除息影响:\n  每股派现 0.420元 → 除息后股价约下调0.42元\n进度: 实施\n股权登记日: 2026-08-20\n除权除息日: 2026-08-21\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601899
+SUMMARY:紫金矿业(601899) 分红股权登记
+UID:601899-2026-08-20@astock-dividend
 END:VEVENT
 END:VCALENDAR
