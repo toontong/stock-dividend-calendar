@@ -5018,5 +5018,24 @@
         "progress": "实施"
       }
     ]
+  },
+  "601688": {
+    "date": "2026-08-19",
+    "model": "deepseek-v4-pro",
+    "cached_analysis": {
+      "overall_score": 0,
+      "dividend_stability": "未知",
+      "estimated_yield_pct": 0,
+      "earnings_quality": "未知",
+      "valuation_level": "未知",
+      "growth_outlook": "未知",
+      "risk_level": "未知",
+      "recovery_probability": "未知",
+      "recovery_days": "未知",
+      "analysis": "{\n  \"overall_score\": 7,\n  \"dividend_stability\": \"较稳定\",\n  \"estimated_yield_pct\": 2.16,\n  \"earnings_quality\": \"良好\",\n  \"valuation_level\": \"低估\",\n  \"growth_outlook\": \"稳健\",\n  \"risk_level\": \"中\",\n  \"recovery_probability\": \"中\",\n  \"recovery_days\":",
+      "highlights": [],
+      "risks": []
+    },
+    "history": []
   }
 }
