@@ -4,6 +4,17 @@ PRODID:-//A-Stock Dividend Calendar//CN
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:海尔智家(600690) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260820
+DESCRIPTION:股票: 海尔智家(600690)\n每10股派8.9151元（每股派0.892元）\n除权除息影响:\n  每股派现 0.892元 → 除息后股价约下调0.89元\n进度: 实施\n股权登记日: 2026-08-20\n除权除息日: 2026-08-21
+SUMMARY:海尔智家(600690) 分红股权登记
+UID:600690-2026-08-20@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:中煤能源(601898) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -22,5 +33,60 @@ DTSTART;VALUE=DATE:20260820
 DESCRIPTION:股票: 华泰证券(601688)\n每10股派4.0元（每股派0.400元）\n除权除息影响:\n  每股派现 0.400元 → 除息后股价约下调0.40元\n进度: 实施\n股权登记日: 2026-08-20\n除权除息日: 2026-08-21\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601688
 SUMMARY:华泰证券(601688) 分红股权登记
 UID:601688-2026-08-20@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:紫金矿业(601899) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260820
+DESCRIPTION:股票: 紫金矿业(601899)\n每10股派4.2元（每股派0.420元）\n除权除息影响:\n  每股派现 0.420元 → 除息后股价约下调0.42元\n进度: 实施\n股权登记日: 2026-08-20\n除权除息日: 2026-08-21\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601899
+SUMMARY:紫金矿业(601899) 分红股权登记
+UID:601899-2026-08-20@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:格力电器(000651) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260826
+DESCRIPTION:股票: 格力电器(000651)\n每10股派20.0元（每股派2.000元）\n除权除息影响:\n  每股派现 2.000元 → 除息后股价约下调2.00元\n进度: 实施\n股权登记日: 2026-08-26\n除权除息日: 2026-08-27
+SUMMARY:格力电器(000651) 分红股权登记
+UID:000651-2026-08-26@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:山东黄金(600547) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260820
+DESCRIPTION:股票: 山东黄金(600547)\n每10股派1.0元（每股派0.100元）\n除权除息影响:\n  每股派现 0.100元 → 除息后股价约下调0.10元\n进度: 实施\n股权登记日: 2026-08-20\n除权除息日: 2026-08-21\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600547
+SUMMARY:山东黄金(600547) 分红股权登记
+UID:600547-2026-08-20@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:泸州老窖(000568) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260827
+DESCRIPTION:股票: 泸州老窖(000568)\n每10股派44.1712元（每股派4.417元）\n除权除息影响:\n  每股派现 4.417元 → 除息后股价约下调4.42元\n进度: 实施\n股权登记日: 2026-08-27\n除权除息日: 2026-08-28
+SUMMARY:泸州老窖(000568) 分红股权登记
+UID:000568-2026-08-27@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:中国平安(601318) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260909
+DESCRIPTION:股票: 中国平安(601318)\n每10股派9.8元（每股派0.980元）\n除权除息影响:\n  每股派现 0.980元 → 除息后股价约下调0.98元\n进度: 实施\n股权登记日: 2026-09-09\n除权除息日: 2026-09-10
+SUMMARY:中国平安(601318) 分红股权登记
+UID:601318-2026-09-09@astock-dividend
 END:VEVENT
 END:VCALENDAR
