@@ -295,6 +295,8 @@ https://<你的用户名>.github.io/<仓库名>/dividend.ics
 | 扁平 `stocks: [{code, name}]` | 兼容旧格式，可选 |
 | `industries: [行业名]` | 自动拉取申万行业成分股 |
 
+> **ETF/基金分组**：分组名含 `ETF`、`ETC` 或 `基金` 关键字时，该组标的按基金处理。月月分红型 ETF（如红利国企ETF 510720）没有未来分红数据源，程序会基于累计分红历史按月规律**预测**未来分红日，金额取近期均值，日程标注「预计」，且不参与 LLM 分析。
+
 ### `config/calendar.yml`
 
 | 字段 | 类型 | 默认值 | 说明 |
@@ -308,6 +310,7 @@ https://<你的用户名>.github.io/<仓库名>/dividend.ics
 | `filter.lookahead_days` | int | `365` | 向前抓取天数 |
 | `filter.min_progress` | string | `实施` | 分红进度下限 |
 | `filter.include_proposed` | bool | `false` | 是否包含预案 |
+| `filter.keep_history_days` | int | `30` | 保留最近 N 天内已过期的日程，更早的才从日历清理 |
 
 ### `config/llm.yml`
 
@@ -316,11 +319,12 @@ https://<你的用户名>.github.io/<仓库名>/dividend.ics
 | `enabled` | bool | `false` | 启用 LLM 分析（等同默认带 `--analyze`） |
 | `api_base` | string | `https://api.openai.com/v1` | API 端点（环境变量 `LLM_BASE_URL` 优先） |
 | `model` | string | `gpt-4o-mini` | 模型名（环境变量 `LLM_MODEL` 优先） |
-| `max_tokens` | int | `4000` | 最大输出 token |
+| `max_tokens` | int | `8192` | 最大输出 token |
 | `temperature` | float | `0.3` | 生成温度 |
 | `request_delay` | float | `1.0` | 请求间隔（秒），避免限流 |
 | `pages_base_url` | string | `""` | GitHub Pages 地址，填入后日程备注附带报告 URL |
 | `analysis_prompt` | string | `...` | 分析框架模板，支持 `{stock_code}` `{stock_name}` `{events_summary}` 占位符 |
+| `summary_prompt` | string | `...` | 汇总分析模板（≥2 只时调用），支持 `{stocks_summary}` 占位符 |
 
 ## 项目结构
 

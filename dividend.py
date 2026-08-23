@@ -56,6 +56,7 @@ PRODID = "-//A-Stock Dividend Calendar//CN"
 class Stock:
     code: str
     name: str
+    kind: str = "stock"  # "stock" | "fund"
 
     @property
     def label(self) -> str:
@@ -75,6 +76,7 @@ class Event:
     announce_date: Optional[date] = None
     analysis_url: Optional[str] = None
     analysis_error: Optional[str] = None
+    is_fund: bool = False
 
     @property
     def event_date(self) -> date:
@@ -93,15 +95,19 @@ class Event:
 
     @property
     def summary(self) -> str:
-        return f"{self.name}({self.code}) 分红股权登记"
+        action = "分红除息" if self.is_fund else "分红股权登记"
+        return f"{self.name}({self.code}) {action}"
 
     @property
     def description(self) -> str:
         parts = [f"股票: {self.name}({self.code})"]
         # parts.append(f"详情: {self.stock_url}")
         if self.cash_dividend:
-            per_share = self.cash_dividend / 10
-            parts.append(f"每10股派{self.cash_dividend}元（每股派{per_share:.3f}元）")
+            if self.is_fund:
+                parts.append(f"每份派{self.cash_dividend:.4f}元")
+            else:
+                per_share = self.cash_dividend / 10
+                parts.append(f"每10股派{self.cash_dividend}元（每股派{per_share:.3f}元）")
         if self.stock_dividend:
             parts.append(f"送{self.stock_dividend}股")
         if self.stock_transfer:
@@ -131,8 +137,11 @@ class Event:
             return ""
         lines = ["除权除息影响:"]
         if cash:
-            per_share = cash / 10
-            lines.append(f"  每股派现 {per_share:.3f}元 → 除息后股价约下调{per_share:.2f}元")
+            if self.is_fund:
+                lines.append(f"  每份派现 {cash:.4f}元 → 除息后净值约下调{cash:.4f}元")
+            else:
+                per_share = cash / 10
+                lines.append(f"  每股派现 {per_share:.3f}元 → 除息后股价约下调{per_share:.2f}元")
         if bonus or transfer:
             expand = 1 + bonus / 10 + transfer / 10
             pct = (expand - 1) * 100
@@ -294,6 +303,9 @@ def fetch_events(
     events: list[Event] = []
 
     for stock in stocks:
+        if stock.kind == "fund":
+            events.extend(_fetch_etf_dividend_forecast(stock, lookahead_days))
+            continue
         try:
             df = ak.stock_history_dividend_detail(symbol=stock.code, indicator="分红")
             if df is None or df.empty:
@@ -351,6 +363,50 @@ def _fetch_dividend_history(stock: Stock, lookback_years: int = 5) -> list[dict]
     except Exception as exc:
         logger.warning("获取 %s 历史分红失败: %s", stock.label, exc)
     return rows
+
+
+def _fetch_etf_dividend_forecast(stock: Stock, lookahead_days: int = 365) -> list[Event]:
+    """从ETF累计分红历史识别月度规律，预测未来分红日程"""
+    today = date.today()
+    cutoff = today + timedelta(days=lookahead_days)
+    try:
+        exchange = "sh" if stock.code.startswith("5") else "sz"
+        df = ak.fund_etf_dividend_sina(symbol=exchange + stock.code)
+        if df is None or df.empty:
+            return []
+        dates = [_parse_date(d) for d in df.get("日期", [])]
+        cum = [_parse_float(c) for c in df.get("累计分红", [])]
+        if len(dates) < 2 or any(d is None for d in dates):
+            return []
+
+        # 单次分红 = 相邻累计分红之差；金额取最近3次均值
+        per = [round((cum[i] or 0) - (cum[i - 1] or 0), 4) for i in range(1, len(cum))]
+        recent = per[-3:] if len(per) >= 3 else per
+        avg_amount = round(sum(recent) / len(recent), 4)
+
+        # 平均间隔天数（510720 月度分红约30天）
+        intervals = [(dates[i] - dates[i - 1]).days for i in range(1, len(dates))]
+        avg_interval = round(sum(intervals) / len(intervals))
+        if avg_interval < 1:
+            avg_interval = 30
+
+        events: list[Event] = []
+        nxt = dates[-1] + timedelta(days=avg_interval)
+        while nxt <= cutoff:
+            if nxt >= today:
+                events.append(Event(
+                    code=stock.code,
+                    name=stock.name,
+                    ex_date=nxt,
+                    cash_dividend=avg_amount,
+                    progress="预计",
+                    is_fund=True,
+                ))
+            nxt += timedelta(days=avg_interval)
+        return events
+    except Exception as exc:
+        logger.warning("获取 %s ETF分红预测失败: %s", stock.label, exc)
+        return []
 
 
 def _fetch_recent_trades(code: str, days: int = 10) -> list[dict]:
@@ -454,10 +510,11 @@ def sync_caldav(
     calendar_name: str,
     ssl_verify: bool = True,
     state_path: Optional[Path] = None,
+    keep_history_days: int = 30,
 ) -> dict:
     """同步事件到 CalDAV，返回 {created, updated, deleted, skipped, errors}
 
-    WPS CalDAV 不支持列出/删除事件，使用本地状态文件追踪已写入的 UID。
+    保留最近 keep_history_days 天内已过期的日程，仅清理更早的过期事件。
     """
     result = {"created": 0, "updated": 0, "deleted": 0, "skipped": 0, "errors": []}
 
@@ -543,12 +600,13 @@ def sync_caldav(
         if uid not in new_uids:
             del local_state[uid]
 
-    # 服务器端清理过期事件（标准 CalDAV 才有效，WPS 此处无操作）
+    # 清理过期事件：保留最近 keep_history_days 天内过期的日程，只删除更早的
+    history_cutoff = today - timedelta(days=keep_history_days)
     for uid, caldav_ev in server_index.items():
         if uid not in new_uids:
             try:
                 dt = _caldav_get_date(caldav_ev)
-                if dt and dt < today:
+                if dt and dt < history_cutoff:
                     caldav_ev.delete()
                     result["deleted"] += 1
             except Exception:
@@ -639,7 +697,7 @@ def _caldav_index(cal_obj) -> dict[str, object]:
 
 
 def _caldav_upsert(cal_obj, ev: Event, existing_event=None):
-    """写入事件到 CalDAV。existing_event 非空时先删除旧事件（标准 CalDAV），WPS 忽略删除异常"""
+    """写入事件到 CalDAV。existing_event 非空时先删除旧事件再写入"""
     from icalendar import Calendar as ICal, Event as ICalEvent, Alarm
     if existing_event is not None:
         try:
@@ -730,9 +788,10 @@ class StockAnalyzer:
         self.api_base = os.environ.get("LLM_BASE_URL", "").rstrip("/") or cfg.get("api_base", "").rstrip("/")
         self.api_key = os.environ.get("LLM_API_KEY", "") or os.environ.get(cfg.get("api_key_env", ""), "")
         self.model = os.environ.get("LLM_MODEL", "") or cfg.get("model", "gpt-4o-mini")
-        self.max_tokens = cfg.get("max_tokens", 4000)
+        self.max_tokens = cfg.get("max_tokens", 8192)
         self.temperature = cfg.get("temperature", 0.3)
         self.prompt_template = cfg.get("analysis_prompt", "")
+        self.summary_prompt = cfg.get("summary_prompt", "")
         self.request_delay = cfg.get("request_delay", 1.0)
         self._session = requests.Session()
         if self.api_key:
@@ -801,6 +860,28 @@ class StockAnalyzer:
         raw = self._call_llm(messages)
         return _parse_analysis(raw, stock)
 
+    def summarize(self, results: list[dict]) -> Optional[dict]:
+        """对多只股票的分析结果做组合层面汇总，返回结构化 dict 或 None"""
+        if not self.summary_prompt:
+            return None
+        lines = []
+        for r in results:
+            a = r.get("analysis", {})
+            lines.append(
+                f"- {r['stock'].name}({r['stock'].code}) 评分:{a.get('overall_score', '?')}/10 "
+                f"股息率:{a.get('estimated_yield_pct', '?')}% 稳定性:{a.get('dividend_stability', '?')} "
+                f"估值:{a.get('valuation_level', '?')} 风险:{a.get('risk_level', '?')} "
+                f"回补:{a.get('recovery_probability', '?')}·{a.get('recovery_days', '?')}天"
+            )
+        stocks_summary = "\n".join(lines)
+        user_prompt = self.summary_prompt.replace("{stocks_summary}", stocks_summary)
+        messages = [
+            {"role": "system", "content": "你是一位专业的A股投资组合策略师，擅长组合层面的横向对比。请严格按要求的JSON格式输出。"},
+            {"role": "user", "content": user_prompt},
+        ]
+        raw = self._call_llm(messages)
+        return _parse_summary(raw)
+
     def _call_llm(self, messages: list[dict]) -> str:
         base = self.api_base
         url = base if base.endswith("/chat/completions") else f"{base}/chat/completions"
@@ -809,6 +890,7 @@ class StockAnalyzer:
             "messages": messages,
             "max_tokens": self.max_tokens,
             "temperature": self.temperature,
+            "response_format": {"type": "json_object"},
         }
         logger.info("LLM 请求: %s (model=%s)", url, self.model)
         try:
@@ -838,15 +920,21 @@ class StockAnalyzer:
             return f"[解析失败: {exc}]"
 
 
+def _strip_code_fence(text: str) -> str:
+    """剥离 LLM 输出可能包裹的 ``` 代码围栏"""
+    text = text.strip()
+    if text.startswith("```"):
+        lines = text.split("\n")
+        start = 1 if lines[0].strip() in ("```", "```json") else 0
+        end = -1 if lines[-1].strip() == "```" else None
+        text = "\n".join(lines[start:end])
+    return text
+
+
 def _parse_analysis(raw: str, stock: Stock) -> Optional[dict]:
     """解析LLM返回的JSON，失败返回降级dict"""
     try:
-        text = raw.strip()
-        if text.startswith("```"):
-            lines = text.split("\n")
-            start = 1 if lines[0].strip() in ("```", "```json") else 0
-            end = -1 if lines[-1].strip() == "```" else None
-            text = "\n".join(lines[start:end])
+        text = _strip_code_fence(raw)
         data = json.loads(text)
         assert "analysis" in data
         return data
@@ -865,6 +953,23 @@ def _parse_analysis(raw: str, stock: Stock) -> Optional[dict]:
             "analysis": raw,
             "highlights": [],
             "risks": [],
+        }
+
+
+def _parse_summary(raw: str) -> dict:
+    """解析汇总分析的JSON，失败返回降级dict（summary 兜底为原文）"""
+    try:
+        text = _strip_code_fence(raw)
+        data = json.loads(text)
+        assert "summary" in data
+        return data
+    except Exception:
+        logger.warning("汇总JSON解析失败，降级为纯文本: %s", raw[:100])
+        return {
+            "summary": raw,
+            "top_picks": [],
+            "allocation": "",
+            "risk_warning": "",
         }
 
 
@@ -890,17 +995,17 @@ def _extract_api_error(status: int, body: str) -> str:
 # HTML 分析报告（单文件，含 SVG 图表）
 # ═══════════════════════════════════════════════════════════
 
-def generate_analysis_html(results: list[dict], output_path: Path, generated_date: str, model: str) -> Path:
+def generate_analysis_html(results: list[dict], output_path: Path, generated_date: str, model: str, summary: Optional[dict] = None) -> Path:
     """将多只股票的结构化分析结果渲染为单个HTML报告"""
     if not results:
         return output_path
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    html = _build_html(results, generated_date, model)
+    html = _build_html(results, generated_date, model, summary)
     output_path.write_text(html, encoding="utf-8")
     return output_path
 
 
-def _build_html(results: list[dict], date_str: str, model: str) -> str:
+def _build_html(results: list[dict], date_str: str, model: str, summary: Optional[dict] = None) -> str:
     stocks_json = json.dumps([
         {
             "code": r["stock"].code,
@@ -928,6 +1033,21 @@ def _build_html(results: list[dict], date_str: str, model: str) -> str:
         }
         for r in results
     ], ensure_ascii=False)
+
+    summary_html = ""
+    if summary:
+        summary_text = _md_to_html(summary.get("summary", ""))
+        picks = "".join(f"<li>{p}</li>" for p in summary.get("top_picks", []))
+        allocation = summary.get("allocation", "")
+        risk_warning = summary.get("risk_warning", "")
+        summary_html = f'''<h2> 组合汇总分析</h2>
+<div class="stock-card" id="portfolio-summary">
+  {summary_text}
+  {f"<h4> 推荐关注排序</h4><ul>{picks}</ul>" if picks else ""}
+  {f"<h4> 仓位配置建议</h4><p>{allocation}</p>" if allocation else ""}
+  {f'<h4> 组合风险提示</h4><p style="color:var(--red)">{risk_warning}</p>' if risk_warning else ""}
+</div>
+'''
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -984,6 +1104,8 @@ def _build_html(results: list[dict], date_str: str, model: str) -> str:
 
 <h1> A股分红分析报告</h1>
 <p class="meta">生成日期: {date_str} &nbsp;|&nbsp; 模型: {model} &nbsp;|&nbsp; 覆盖 {len(results)} 只股票</p>
+
+{summary_html}
 
 <div class="kpis" id="kpi-row"></div>
 
@@ -1159,6 +1281,7 @@ class Config:
     lookahead_days: int
     min_progress: str
     include_proposed: bool
+    keep_history_days: int
     caldav_enabled: bool
     caldav_url: str
     caldav_calendar: str
@@ -1188,6 +1311,8 @@ def _parse_yaml_stocks(data: dict) -> list[Stock]:
         for _category, items in data.items():
             if not isinstance(items, list):
                 continue
+            cat_upper = str(_category).upper()
+            kind = "fund" if any(k in cat_upper for k in ("ETF", "ETC", "基金")) else "stock"
             for item in items:
                 if not isinstance(item, dict):
                     continue
@@ -1195,7 +1320,7 @@ def _parse_yaml_stocks(data: dict) -> list[Stock]:
                     code = str(code)
                     if code not in seen:
                         seen.add(code)
-                        result.append(Stock(code=code, name=str(name)))
+                        result.append(Stock(code=code, name=str(name), kind=kind))
     return result
 
 
@@ -1207,6 +1332,7 @@ def _default_config() -> Config:
         lookahead_days=365,
         min_progress="实施",
         include_proposed=False,
+        keep_history_days=30,
         caldav_enabled=False,
         caldav_url="",
         caldav_calendar="A股分红",
@@ -1252,6 +1378,7 @@ def load_config(config_dir: str | None) -> Config:
         lookahead_days=filter_cfg.get("lookahead_days", 365),
         min_progress=filter_cfg.get("min_progress", "实施"),
         include_proposed=filter_cfg.get("include_proposed", False),
+        keep_history_days=filter_cfg.get("keep_history_days", 30),
         caldav_enabled=caldav_cfg.get("enabled", False),
         caldav_url=caldav_cfg.get("server_url", ""),
         caldav_calendar=caldav_cfg.get("calendar_name", "A股分红"),
@@ -1364,6 +1491,8 @@ def main() -> int:
                 if ev.code in seen:
                     continue
                 seen.add(ev.code)
+                if ev.is_fund:
+                    continue
                 stock = Stock(code=ev.code, name=ev.name)
                 stock_events = [e for e in events if e.code == ev.code]
                 history = _fetch_dividend_history(stock)
@@ -1409,9 +1538,30 @@ def main() -> int:
             if skipped_count:
                 print(f"\nLLM 分析跳过: {skipped_count} 只（已有分析报告，加 --force-analyze 强制重分析）")
 
+            # ── 组合层面汇总分析（>=2 只时调用一次，带缓存）──
+            summary = None
+            if len(results) >= 2 and analyzer.summary_prompt:
+                codes = sorted(r["stock"].code for r in results)
+                cached = meta.get("_summary")
+                if (not args.force_analyze and cached
+                        and cached.get("model") == analyzer.model
+                        and cached.get("codes") == codes
+                        and cached.get("result")):
+                    summary = cached["result"]
+                    logger.info("汇总分析已有缓存（%d 只），跳过", len(codes))
+                else:
+                    summary = analyzer.summarize(results)
+                    if summary and summary.get("summary"):
+                        meta["_summary"] = {"model": analyzer.model, "codes": codes, "result": summary}
+                        _save_analysis_meta(out_dir, meta)
+                        logger.info("汇总分析完成（%d 只）", len(codes))
+                    else:
+                        summary = None
+                        logger.warning("汇总分析失败，跳过")
+
             if results:
                 html_path = out_dir / "analysis.html"
-                generate_analysis_html(results, html_path, today_str, analyzer.model)
+                generate_analysis_html(results, html_path, today_str, analyzer.model, summary)
                 logger.info("分析报告已写入: %s", html_path)
                 print(f"\nLLM 分析报告: {html_path}")
                 if pages_base:
@@ -1438,7 +1588,7 @@ def main() -> int:
             logger.warning("CalDAV server_url 未配置，跳过同步")
         else:
             logger.info("同步到 CalDAV ...")
-            cr = sync_caldav(events, cfg.caldav_url, cfg.caldav_calendar, cfg.caldav_ssl_verify, state_path)
+            cr = sync_caldav(events, cfg.caldav_url, cfg.caldav_calendar, cfg.caldav_ssl_verify, state_path, keep_history_days=cfg.keep_history_days)
 
     print(f"\n{'='*50}")
     print("A股分红日历 同步摘要")

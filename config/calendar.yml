@@ -19,3 +19,4 @@ filter:
   lookahead_days: 365           # 向前抓取天数
   min_progress: "实施"           # 最低进度要求：实施/预案
   include_proposed: false        # 是否包含预案阶段
+  keep_history_days: 30         # 保留最近N天内已过期的日程，更早的才从日历清理
