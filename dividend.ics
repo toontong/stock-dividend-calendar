@@ -15,6 +15,28 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:传音控股(688036) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260828
+DESCRIPTION:股票: 传音控股(688036)\n每10股派8.0元（每股派0.800元）\n除权除息影响:\n  每股派现 0.800元 → 除息后股价约下调0.80元\n进度: 实施\n股权登记日: 2026-08-28\n除权除息日: 2026-08-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688036
+SUMMARY:传音控股(688036) 分红股权登记
+UID:688036-2026-08-28@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:红利国企ETF国泰(510720) 分红除息
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20270510
+DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-05-10
+SUMMARY:红利国企ETF国泰(510720) 分红除息
+UID:510720-2027-05-10@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
@@ -22,6 +44,17 @@ DTSTART;VALUE=DATE:20270609
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-06-09
 SUMMARY:红利国企ETF国泰(510720) 分红除息
 UID:510720-2027-06-09@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:药明康德(603259) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260903
+DESCRIPTION:股票: 药明康德(603259)\n每10股派5.1元（每股派0.510元）\n除权除息影响:\n  每股派现 0.510元 → 除息后股价约下调0.51元\n进度: 实施\n股权登记日: 2026-09-03\n除权除息日: 2026-09-04\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-603259
+SUMMARY:药明康德(603259) 分红股权登记
+UID:603259-2026-09-03@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -114,13 +147,13 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:红利国企ETF国泰(510720) 分红除息
+DESCRIPTION:泸州老窖(000568) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20270510
-DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-05-10
-SUMMARY:红利国企ETF国泰(510720) 分红除息
-UID:510720-2027-05-10@astock-dividend
+DTSTART;VALUE=DATE:20260827
+DESCRIPTION:股票: 泸州老窖(000568)\n每10股派44.1712元（每股派4.417元）\n除权除息影响:\n  每股派现 4.417元 → 除息后股价约下调4.42元\n进度: 实施\n股权登记日: 2026-08-27\n除权除息日: 2026-08-28\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000568
+SUMMARY:泸州老窖(000568) 分红股权登记
+UID:000568-2026-08-27@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
