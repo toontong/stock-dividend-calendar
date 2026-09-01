@@ -15,17 +15,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:传音控股(688036) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260828
-DESCRIPTION:股票: 传音控股(688036)\n每10股派8.0元（每股派0.800元）\n除权除息影响:\n  每股派现 0.800元 → 除息后股价约下调0.80元\n进度: 实施\n股权登记日: 2026-08-28\n除权除息日: 2026-08-31\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688036
-SUMMARY:传音控股(688036) 分红股权登记
-UID:688036-2026-08-28@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
@@ -88,6 +77,17 @@ DTSTART;VALUE=DATE:20270709
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-07-09
 SUMMARY:红利国企ETF国泰(510720) 分红除息
 UID:510720-2027-07-09@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:迈瑞医疗(300760) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260907
+DESCRIPTION:股票: 迈瑞医疗(300760)\n每10股派13.3元（每股派1.330元）\n除权除息影响:\n  每股派现 1.330元 → 除息后股价约下调1.33元\n进度: 实施\n股权登记日: 2026-09-07\n除权除息日: 2026-09-08\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-300760
+SUMMARY:迈瑞医疗(300760) 分红股权登记
+UID:300760-2026-09-07@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
