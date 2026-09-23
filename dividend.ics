@@ -48,6 +48,17 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:中国石化(600028) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260929
+DESCRIPTION:股票: 中国石化(600028)\n每10股派1.05元（每股派0.105元）\n除权除息影响:\n  每股派现 0.105元 → 除息后股价约下调0.11元\n进度: 实施\n股权登记日: 2026-09-29\n除权除息日: 2026-09-30\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600028
+SUMMARY:中国石化(600028) 分红股权登记
+UID:600028-2026-09-29@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:中国中铁(601390) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -154,6 +165,17 @@ DTSTART;VALUE=DATE:20261229
 DESCRIPTION:股票: 红利ETF华泰柏瑞(510880)\n每份派0.1387元\n除权除息影响:\n  每份派现 0.1387元 → 除息后净值约下调0.1387元\n进度: 预计\n除权除息日: 2026-12-29
 SUMMARY:红利ETF华泰柏瑞(510880) 分红除息
 UID:510880-2026-12-29@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:海螺水泥(600585) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20260929
+DESCRIPTION:股票: 海螺水泥(600585)\n每10股派1.3元（每股派0.130元）\n除权除息影响:\n  每股派现 0.130元 → 除息后股价约下调0.13元\n进度: 实施\n股权登记日: 2026-09-29\n除权除息日: 2026-09-30\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600585
+SUMMARY:海螺水泥(600585) 分红股权登记
+UID:600585-2026-09-29@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
