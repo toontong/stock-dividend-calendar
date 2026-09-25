@@ -15,17 +15,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:云南白药(000538) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260923
-DESCRIPTION:股票: 云南白药(000538)\n每10股派10.38元（每股派1.038元）\n除权除息影响:\n  每股派现 1.038元 → 除息后股价约下调1.04元\n进度: 实施\n股权登记日: 2026-09-23\n除权除息日: 2026-09-24\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000538
-SUMMARY:云南白药(000538) 分红股权登记
-UID:000538-2026-09-23@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
@@ -88,17 +77,6 @@ DTSTART;VALUE=DATE:20260929
 DESCRIPTION:股票: 中国移动(600941)\n每10股派25.1元（每股派2.510元）\n除权除息影响:\n  每股派现 2.510元 → 除息后股价约下调2.51元\n进度: 实施\n股权登记日: 2026-09-29\n除权除息日: 2026-09-30\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600941
 SUMMARY:中国移动(600941) 分红股权登记
 UID:600941-2026-09-29@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:福耀玻璃(600660) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260923
-DESCRIPTION:股票: 福耀玻璃(600660)\n每10股派10.0元（每股派1.000元）\n除权除息影响:\n  每股派现 1.000元 → 除息后股价约下调1.00元\n进度: 实施\n股权登记日: 2026-09-23\n除权除息日: 2026-09-24\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600660
-SUMMARY:福耀玻璃(600660) 分红股权登记
-UID:600660-2026-09-23@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -220,17 +198,6 @@ DTSTART;VALUE=DATE:20270910
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-09-10
 SUMMARY:红利国企ETF国泰(510720) 分红除息
 UID:510720-2027-09-10@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:平安银行(000001) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20260923
-DESCRIPTION:股票: 平安银行(000001)\n每10股派2.49元（每股派0.249元）\n除权除息影响:\n  每股派现 0.249元 → 除息后股价约下调0.25元\n进度: 实施\n股权登记日: 2026-09-23\n除权除息日: 2026-09-24\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000001
-SUMMARY:平安银行(000001) 分红股权登记
-UID:000001-2026-09-23@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
