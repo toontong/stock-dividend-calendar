@@ -26,13 +26,13 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:兖矿能源(600188) 分红股权登记
+DESCRIPTION:上港集团(600018) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20260928
-DESCRIPTION:股票: 兖矿能源(600188)\n每10股派2.0元（每股派0.200元）\n除权除息影响:\n  每股派现 0.200元 → 除息后股价约下调0.20元\n进度: 实施\n股权登记日: 2026-09-28\n除权除息日: 2026-09-29\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600188
-SUMMARY:兖矿能源(600188) 分红股权登记
-UID:600188-2026-09-28@astock-dividend
+DTSTART;VALUE=DATE:20261014
+DESCRIPTION:股票: 上港集团(600018)\n每10股派0.5元（每股派0.050元）\n除权除息影响:\n  每股派现 0.050元 → 除息后股价约下调0.05元\n进度: 实施\n股权登记日: 2026-10-14\n除权除息日: 2026-10-15\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600018
+SUMMARY:上港集团(600018) 分红股权登记
+UID:600018-2026-10-14@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -187,6 +187,17 @@ DTSTART;VALUE=DATE:20270712
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-07-12
 SUMMARY:红利国企ETF国泰(510720) 分红除息
 UID:510720-2027-07-12@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:广发证券(000776) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261013
+DESCRIPTION:股票: 广发证券(000776)\n每10股派2.5元（每股派0.250元）\n除权除息影响:\n  每股派现 0.250元 → 除息后股价约下调0.25元\n进度: 实施\n股权登记日: 2026-10-13\n除权除息日: 2026-10-14\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000776
+SUMMARY:广发证券(000776) 分红股权登记
+UID:000776-2026-10-13@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
