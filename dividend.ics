@@ -29,6 +29,138 @@ ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
+DTSTART;VALUE=DATE:20270314
+DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-03-14
+SUMMARY:红利国企ETF国泰(510720) 分红除息
+UID:510720-2027-03-14@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:恒立液压(601100) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261015
+DESCRIPTION:股票: 恒立液压(601100)\n每10股派3.0元（每股派0.300元）\n除权除息影响:\n  每股派现 0.300元 → 除息后股价约下调0.30元\n进度: 实施\n股权登记日: 2026-10-15\n除权除息日: 2026-10-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601100
+SUMMARY:恒立液压(601100) 分红股权登记
+UID:601100-2026-10-15@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:上港集团(600018) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261014
+DESCRIPTION:股票: 上港集团(600018)\n每10股派0.5元（每股派0.050元）\n除权除息影响:\n  每股派现 0.050元 → 除息后股价约下调0.05元\n进度: 实施\n股权登记日: 2026-10-14\n除权除息日: 2026-10-15\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600018
+SUMMARY:上港集团(600018) 分红股权登记
+UID:600018-2026-10-14@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:红利国企ETF国泰(510720) 分红除息
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20270113
+DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-01-13
+SUMMARY:红利国企ETF国泰(510720) 分红除息
+UID:510720-2027-01-13@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:红利国企ETF国泰(510720) 分红除息
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20270811
+DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-08-11
+SUMMARY:红利国企ETF国泰(510720) 分红除息
+UID:510720-2027-08-11@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:红利国企ETF国泰(510720) 分红除息
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261015
+DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2026-10-15
+SUMMARY:红利国企ETF国泰(510720) 分红除息
+UID:510720-2026-10-15@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:红利国企ETF国泰(510720) 分红除息
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20271010
+DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-10-10
+SUMMARY:红利国企ETF国泰(510720) 分红除息
+UID:510720-2027-10-10@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:红利国企ETF国泰(510720) 分红除息
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20270513
+DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-05-13
+SUMMARY:红利国企ETF国泰(510720) 分红除息
+UID:510720-2027-05-13@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:华泰证券(601688) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261022
+DESCRIPTION:股票: 华泰证券(601688)\n每10股派1.8元（每股派0.180元）\n除权除息影响:\n  每股派现 0.180元 → 除息后股价约下调0.18元\n进度: 实施\n股权登记日: 2026-10-22\n除权除息日: 2026-10-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601688
+SUMMARY:华泰证券(601688) 分红股权登记
+UID:601688-2026-10-22@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:红利国企ETF国泰(510720) 分红除息
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20270413
+DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-04-13
+SUMMARY:红利国企ETF国泰(510720) 分红除息
+UID:510720-2027-04-13@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:红利ETF华泰柏瑞(510880) 分红除息
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261229
+DESCRIPTION:股票: 红利ETF华泰柏瑞(510880)\n每份派0.1387元\n除权除息影响:\n  每份派现 0.1387元 → 除息后净值约下调0.1387元\n进度: 预计\n除权除息日: 2026-12-29
+SUMMARY:红利ETF华泰柏瑞(510880) 分红除息
+UID:510880-2026-12-29@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:国泰君安(601211) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261015
+DESCRIPTION:股票: 国泰君安(601211)\n每10股派3.0元（每股派0.300元）\n除权除息影响:\n  每股派现 0.300元 → 除息后股价约下调0.30元\n进度: 实施\n股权登记日: 2026-10-15\n除权除息日: 2026-10-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601211
+SUMMARY:国泰君安(601211) 分红股权登记
+UID:601211-2026-10-15@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:红利国企ETF国泰(510720) 分红除息
+TRIGGER:-P3D
+END:VALARM
 DTSTART;VALUE=DATE:20261214
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2026-12-14
 SUMMARY:红利国企ETF国泰(510720) 分红除息
@@ -59,24 +191,13 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:华泰证券(601688) 分红股权登记
+DESCRIPTION:时代电气(688187) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20261022
-DESCRIPTION:股票: 华泰证券(601688)\n每10股派1.8元（每股派0.180元）\n除权除息影响:\n  每股派现 0.180元 → 除息后股价约下调0.18元\n进度: 实施\n股权登记日: 2026-10-22\n除权除息日: 2026-10-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601688
-SUMMARY:华泰证券(601688) 分红股权登记
-UID:601688-2026-10-22@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:红利国企ETF国泰(510720) 分红除息
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20270314
-DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-03-14
-SUMMARY:红利国企ETF国泰(510720) 分红除息
-UID:510720-2027-03-14@astock-dividend
+DTSTART;VALUE=DATE:20261015
+DESCRIPTION:股票: 时代电气(688187)\n每10股派4.6元（每股派0.460元）\n除权除息影响:\n  每股派现 0.460元 → 除息后股价约下调0.46元\n进度: 实施\n股权登记日: 2026-10-15\n除权除息日: 2026-10-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688187
+SUMMARY:时代电气(688187) 分红股权登记
+UID:688187-2026-10-15@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -95,72 +216,6 @@ ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20270811
-DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-08-11
-SUMMARY:红利国企ETF国泰(510720) 分红除息
-UID:510720-2027-08-11@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:恒立液压(601100) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261015
-DESCRIPTION:股票: 恒立液压(601100)\n每10股派3.0元（每股派0.300元）\n除权除息影响:\n  每股派现 0.300元 → 除息后股价约下调0.30元\n进度: 实施\n股权登记日: 2026-10-15\n除权除息日: 2026-10-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601100
-SUMMARY:恒立液压(601100) 分红股权登记
-UID:601100-2026-10-15@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:上港集团(600018) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261014
-DESCRIPTION:股票: 上港集团(600018)\n每10股派0.5元（每股派0.050元）\n除权除息影响:\n  每股派现 0.050元 → 除息后股价约下调0.05元\n进度: 实施\n股权登记日: 2026-10-14\n除权除息日: 2026-10-15\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600018
-SUMMARY:上港集团(600018) 分红股权登记
-UID:600018-2026-10-14@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:红利国企ETF国泰(510720) 分红除息
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20270413
-DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-04-13
-SUMMARY:红利国企ETF国泰(510720) 分红除息
-UID:510720-2027-04-13@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:红利国企ETF国泰(510720) 分红除息
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261015
-DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2026-10-15
-SUMMARY:红利国企ETF国泰(510720) 分红除息
-UID:510720-2026-10-15@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:红利ETF华泰柏瑞(510880) 分红除息
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261229
-DESCRIPTION:股票: 红利ETF华泰柏瑞(510880)\n每份派0.1387元\n除权除息影响:\n  每份派现 0.1387元 → 除息后净值约下调0.1387元\n进度: 预计\n除权除息日: 2026-12-29
-SUMMARY:红利ETF华泰柏瑞(510880) 分红除息
-UID:510880-2026-12-29@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:红利国企ETF国泰(510720) 分红除息
-TRIGGER:-P3D
-END:VALARM
 DTSTART;VALUE=DATE:20270910
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-09-10
 SUMMARY:红利国企ETF国泰(510720) 分红除息
@@ -169,13 +224,13 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:红利国企ETF国泰(510720) 分红除息
+DESCRIPTION:片仔癀(600436) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20270513
-DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-05-13
-SUMMARY:红利国企ETF国泰(510720) 分红除息
-UID:510720-2027-05-13@astock-dividend
+DTSTART;VALUE=DATE:20261015
+DESCRIPTION:股票: 片仔癀(600436)\n每10股派10.7元（每股派1.070元）\n除权除息影响:\n  每股派现 1.070元 → 除息后股价约下调1.07元\n进度: 实施\n股权登记日: 2026-10-15\n除权除息日: 2026-10-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600436
+SUMMARY:片仔癀(600436) 分红股权登记
+UID:600436-2026-10-15@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -187,16 +242,5 @@ DTSTART;VALUE=DATE:20261114
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2026-11-14
 SUMMARY:红利国企ETF国泰(510720) 分红除息
 UID:510720-2026-11-14@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:红利国企ETF国泰(510720) 分红除息
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20270113
-DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0030元\n除权除息影响:\n  每份派现 0.0030元 → 除息后净值约下调0.0030元\n进度: 预计\n除权除息日: 2027-01-13
-SUMMARY:红利国企ETF国泰(510720) 分红除息
-UID:510720-2027-01-13@astock-dividend
 END:VEVENT
 END:VCALENDAR
