@@ -95,6 +95,28 @@ ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
+DTSTART;VALUE=DATE:20271008
+DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0031元\n除权除息影响:\n  每份派现 0.0031元 → 除息后净值约下调0.0031元\n进度: 预计\n除权除息日: 2027-10-08
+SUMMARY:红利国企ETF国泰(510720) 分红除息
+UID:510720-2027-10-08@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:工商银行(601398) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261020
+DESCRIPTION:股票: 工商银行(601398)\n每10股派1.511元（每股派0.151元）\n除权除息影响:\n  每股派现 0.151元 → 除息后股价约下调0.15元\n进度: 实施\n股权登记日: 2026-10-20\n除权除息日: 2026-10-21\n\n⚠ LLM分析异常: [分析失败: HTTPSConnectionPool(host='api.deepseek.com'\, port=443): Read timed out. (read timeout=60)]
+SUMMARY:工商银行(601398) 分红股权登记
+UID:601398-2026-10-20@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:红利国企ETF国泰(510720) 分红除息
+TRIGGER:-P3D
+END:VALARM
 DTSTART;VALUE=DATE:20261212
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0031元\n除权除息影响:\n  每份派现 0.0031元 → 除息后净值约下调0.0031元\n进度: 预计\n除权除息日: 2026-12-12
 SUMMARY:红利国企ETF国泰(510720) 分红除息
@@ -121,6 +143,28 @@ DTSTART;VALUE=DATE:20270710
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0031元\n除权除息影响:\n  每份派现 0.0031元 → 除息后净值约下调0.0031元\n进度: 预计\n除权除息日: 2027-07-10
 SUMMARY:红利国企ETF国泰(510720) 分红除息
 UID:510720-2027-07-10@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:立讯精密(002475) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261021
+DESCRIPTION:股票: 立讯精密(002475)\n每10股派1.09923元（每股派0.110元）\n除权除息影响:\n  每股派现 0.110元 → 除息后股价约下调0.11元\n进度: 实施\n股权登记日: 2026-10-21\n除权除息日: 2026-10-22\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-002475
+SUMMARY:立讯精密(002475) 分红股权登记
+UID:002475-2026-10-21@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:中国太保(601601) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261022
+DESCRIPTION:股票: 中国太保(601601)\n每10股派4.2元（每股派0.420元）\n除权除息影响:\n  每股派现 0.420元 → 除息后股价约下调0.42元\n进度: 实施\n股权登记日: 2026-10-22\n除权除息日: 2026-10-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601601
+SUMMARY:中国太保(601601) 分红股权登记
+UID:601601-2026-10-22@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -224,17 +268,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:广发证券(000776) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261013
-DESCRIPTION:股票: 广发证券(000776)\n每10股派2.5元（每股派0.250元）\n除权除息影响:\n  每股派现 0.250元 → 除息后股价约下调0.25元\n进度: 实施\n股权登记日: 2026-10-13\n除权除息日: 2026-10-14\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000776
-SUMMARY:广发证券(000776) 分红股权登记
-UID:000776-2026-10-13@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
@@ -268,12 +301,12 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:红利国企ETF国泰(510720) 分红除息
+DESCRIPTION:陕西煤业(601225) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20271008
-DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0031元\n除权除息影响:\n  每份派现 0.0031元 → 除息后净值约下调0.0031元\n进度: 预计\n除权除息日: 2027-10-08
-SUMMARY:红利国企ETF国泰(510720) 分红除息
-UID:510720-2027-10-08@astock-dividend
+DTSTART;VALUE=DATE:20261021
+DESCRIPTION:股票: 陕西煤业(601225)\n每10股派0.58元（每股派0.058元）\n除权除息影响:\n  每股派现 0.058元 → 除息后股价约下调0.06元\n进度: 实施\n股权登记日: 2026-10-21\n除权除息日: 2026-10-22\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601225
+SUMMARY:陕西煤业(601225) 分红股权登记
+UID:601225-2026-10-21@astock-dividend
 END:VEVENT
 END:VCALENDAR

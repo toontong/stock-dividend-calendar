@@ -5095,21 +5095,23 @@
   "_summary": {
     "model": "deepseek-v4-pro",
     "codes": [
-      "000776",
+      "002475",
       "600018",
       "600436",
       "600938",
       "601006",
       "601100",
       "601211",
+      "601225",
       "601288",
+      "601601",
       "601628",
       "601688",
       "601898",
       "688187"
     ],
     "result": {
-      "summary": "[分析失败: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out. (read timeout=60)]",
+      "summary": "[解析失败: 'choices']",
       "top_picks": [],
       "allocation": "",
       "risk_warning": ""
