@@ -37,17 +37,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:上港集团(600018) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261014
-DESCRIPTION:股票: 上港集团(600018)\n每10股派0.5元（每股派0.050元）\n除权除息影响:\n  每股派现 0.050元 → 除息后股价约下调0.05元\n进度: 实施\n股权登记日: 2026-10-14\n除权除息日: 2026-10-15\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600018
-SUMMARY:上港集团(600018) 分红股权登记
-UID:600018-2026-10-14@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:中煤能源(601898) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -59,17 +48,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:大秦铁路(601006) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261016
-DESCRIPTION:股票: 大秦铁路(601006)\n每10股派0.8008元（每股派0.080元）\n除权除息影响:\n  每股派现 0.080元 → 除息后股价约下调0.08元\n进度: 实施\n股权登记日: 2026-10-16\n除权除息日: 2026-10-19\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601006
-SUMMARY:大秦铁路(601006) 分红股权登记
-UID:601006-2026-10-16@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
@@ -77,6 +55,17 @@ DTSTART;VALUE=DATE:20270411
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0031元\n除权除息影响:\n  每份派现 0.0031元 → 除息后净值约下调0.0031元\n进度: 预计\n除权除息日: 2027-04-11
 SUMMARY:红利国企ETF国泰(510720) 分红除息
 UID:510720-2027-04-11@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:大秦铁路(601006) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261016
+DESCRIPTION:股票: 大秦铁路(601006)\n每10股派0.8008元（每股派0.080元）\n除权除息影响:\n  每股派现 0.080元 → 除息后股价约下调0.08元\n进度: 实施\n股权登记日: 2026-10-16\n除权除息日: 2026-10-19\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601006
+SUMMARY:大秦铁路(601006) 分红股权登记
+UID:601006-2026-10-16@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -107,7 +96,7 @@ DESCRIPTION:工商银行(601398) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
 DTSTART;VALUE=DATE:20261020
-DESCRIPTION:股票: 工商银行(601398)\n每10股派1.511元（每股派0.151元）\n除权除息影响:\n  每股派现 0.151元 → 除息后股价约下调0.15元\n进度: 实施\n股权登记日: 2026-10-20\n除权除息日: 2026-10-21\n\n⚠ LLM分析异常: [分析失败: HTTPSConnectionPool(host='api.deepseek.com'\, port=443): Read timed out. (read timeout=60)]
+DESCRIPTION:股票: 工商银行(601398)\n每10股派1.511元（每股派0.151元）\n除权除息影响:\n  每股派现 0.151元 → 除息后股价约下调0.15元\n进度: 实施\n股权登记日: 2026-10-20\n除权除息日: 2026-10-21\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601398
 SUMMARY:工商银行(601398) 分红股权登记
 UID:601398-2026-10-20@astock-dividend
 END:VEVENT
@@ -169,6 +158,17 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:浙能电力(600023) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261022
+DESCRIPTION:股票: 浙能电力(600023)\n每10股派0.2元（每股派0.020元）\n除权除息影响:\n  每股派现 0.020元 → 除息后股价约下调0.02元\n进度: 实施\n股权登记日: 2026-10-22\n除权除息日: 2026-10-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600023
+SUMMARY:浙能电力(600023) 分红股权登记
+UID:600023-2026-10-22@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
@@ -198,6 +198,17 @@ DTSTART;VALUE=DATE:20270610
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0031元\n除权除息影响:\n  每份派现 0.0031元 → 除息后净值约下调0.0031元\n进度: 预计\n除权除息日: 2027-06-10
 SUMMARY:红利国企ETF国泰(510720) 分红除息
 UID:510720-2027-06-10@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:中国神华(601088) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261023
+DESCRIPTION:股票: 中国神华(601088)\n每10股派9.8元（每股派0.980元）\n除权除息影响:\n  每股派现 0.980元 → 除息后股价约下调0.98元\n进度: 实施\n股权登记日: 2026-10-23\n除权除息日: 2026-10-26\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601088
+SUMMARY:中国神华(601088) 分红股权登记
+UID:601088-2026-10-23@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -246,6 +257,17 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:中国核电(601985) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261022
+DESCRIPTION:股票: 中国核电(601985)\n每10股派0.2元（每股派0.020元）\n除权除息影响:\n  每股派现 0.020元 → 除息后股价约下调0.02元\n进度: 实施\n股权登记日: 2026-10-22\n除权除息日: 2026-10-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601985
+SUMMARY:中国核电(601985) 分红股权登记
+UID:601985-2026-10-22@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
@@ -257,6 +279,17 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:华鲁恒升(600426) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261022
+DESCRIPTION:股票: 华鲁恒升(600426)\n每10股派2.6元（每股派0.260元）\n除权除息影响:\n  每股派现 0.260元 → 除息后股价约下调0.26元\n进度: 实施\n股权登记日: 2026-10-22\n除权除息日: 2026-10-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600426
+SUMMARY:华鲁恒升(600426) 分红股权登记
+UID:600426-2026-10-22@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:时代电气(688187) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -264,6 +297,28 @@ DTSTART;VALUE=DATE:20261015
 DESCRIPTION:股票: 时代电气(688187)\n每10股派4.6元（每股派0.460元）\n除权除息影响:\n  每股派现 0.460元 → 除息后股价约下调0.46元\n进度: 实施\n股权登记日: 2026-10-15\n除权除息日: 2026-10-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688187
 SUMMARY:时代电气(688187) 分红股权登记
 UID:688187-2026-10-15@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:中远海控(601919) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261022
+DESCRIPTION:股票: 中远海控(601919)\n每10股派4.3元（每股派0.430元）\n除权除息影响:\n  每股派现 0.430元 → 除息后股价约下调0.43元\n进度: 实施\n股权登记日: 2026-10-22\n除权除息日: 2026-10-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601919
+SUMMARY:中远海控(601919) 分红股权登记
+UID:601919-2026-10-22@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:中国铝业(601600) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261022
+DESCRIPTION:股票: 中国铝业(601600)\n每10股派2.76元（每股派0.276元）\n除权除息影响:\n  每股派现 0.276元 → 除息后股价约下调0.28元\n进度: 实施\n股权登记日: 2026-10-22\n除权除息日: 2026-10-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601600
+SUMMARY:中国铝业(601600) 分红股权登记
+UID:601600-2026-10-22@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
