@@ -4,13 +4,13 @@ PRODID:-//A-Stock Dividend Calendar//CN
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:中国海油(600938) 分红股权登记
+DESCRIPTION:澜起科技(688008) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
-DTSTART;VALUE=DATE:20261015
-DESCRIPTION:股票: 中国海油(600938)\n每10股派8.1324元（每股派0.813元）\n除权除息影响:\n  每股派现 0.813元 → 除息后股价约下调0.81元\n进度: 实施\n股权登记日: 2026-10-15\n除权除息日: 2026-10-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600938
-SUMMARY:中国海油(600938) 分红股权登记
-UID:600938-2026-10-15@astock-dividend
+DTSTART;VALUE=DATE:20261022
+DESCRIPTION:股票: 澜起科技(688008)\n每10股派2.0元（每股派0.200元）\n除权除息影响:\n  每股派现 0.200元 → 除息后股价约下调0.20元\n进度: 实施\n股权登记日: 2026-10-22\n除权除息日: 2026-10-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688008
+SUMMARY:澜起科技(688008) 分红股权登记
+UID:688008-2026-10-22@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -22,17 +22,6 @@ DTSTART;VALUE=DATE:20261016
 DESCRIPTION:股票: 中国人寿(601628)\n每10股派3.58元（每股派0.358元）\n除权除息影响:\n  每股派现 0.358元 → 除息后股价约下调0.36元\n进度: 实施\n股权登记日: 2026-10-16\n除权除息日: 2026-10-19\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601628
 SUMMARY:中国人寿(601628) 分红股权登记
 UID:601628-2026-10-16@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:恒立液压(601100) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261015
-DESCRIPTION:股票: 恒立液压(601100)\n每10股派3.0元（每股派0.300元）\n除权除息影响:\n  每股派现 0.300元 → 除息后股价约下调0.30元\n进度: 实施\n股权登记日: 2026-10-15\n除权除息日: 2026-10-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601100
-SUMMARY:恒立液压(601100) 分红股权登记
-UID:601100-2026-10-15@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -99,6 +88,17 @@ DTSTART;VALUE=DATE:20261020
 DESCRIPTION:股票: 工商银行(601398)\n每10股派1.511元（每股派0.151元）\n除权除息影响:\n  每股派现 0.151元 → 除息后股价约下调0.15元\n进度: 实施\n股权登记日: 2026-10-20\n除权除息日: 2026-10-21\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601398
 SUMMARY:工商银行(601398) 分红股权登记
 UID:601398-2026-10-20@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:华润微(688396) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261022
+DESCRIPTION:股票: 华润微(688396)\n每10股派0.56元（每股派0.056元）\n除权除息影响:\n  每股派现 0.056元 → 除息后股价约下调0.06元\n进度: 实施\n股权登记日: 2026-10-22\n除权除息日: 2026-10-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688396
+SUMMARY:华润微(688396) 分红股权登记
+UID:688396-2026-10-22@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -235,6 +235,17 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:中国船舶(600150) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261022
+DESCRIPTION:股票: 中国船舶(600150)\n每10股派4.65元（每股派0.465元）\n除权除息影响:\n  每股派现 0.465元 → 除息后股价约下调0.47元\n进度: 实施\n股权登记日: 2026-10-22\n除权除息日: 2026-10-23\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600150
+SUMMARY:中国船舶(600150) 分红股权登记
+UID:600150-2026-10-22@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:红利ETF华泰柏瑞(510880) 分红除息
 TRIGGER:-P3D
 END:VALARM
@@ -242,17 +253,6 @@ DTSTART;VALUE=DATE:20261229
 DESCRIPTION:股票: 红利ETF华泰柏瑞(510880)\n每份派0.1387元\n除权除息影响:\n  每份派现 0.1387元 → 除息后净值约下调0.1387元\n进度: 预计\n除权除息日: 2026-12-29
 SUMMARY:红利ETF华泰柏瑞(510880) 分红除息
 UID:510880-2026-12-29@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:国泰君安(601211) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261015
-DESCRIPTION:股票: 国泰君安(601211)\n每10股派3.0元（每股派0.300元）\n除权除息影响:\n  每股派现 0.300元 → 除息后股价约下调0.30元\n进度: 实施\n股权登记日: 2026-10-15\n除权除息日: 2026-10-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601211
-SUMMARY:国泰君安(601211) 分红股权登记
-UID:601211-2026-10-15@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
@@ -290,17 +290,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:时代电气(688187) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261015
-DESCRIPTION:股票: 时代电气(688187)\n每10股派4.6元（每股派0.460元）\n除权除息影响:\n  每股派现 0.460元 → 除息后股价约下调0.46元\n进度: 实施\n股权登记日: 2026-10-15\n除权除息日: 2026-10-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-688187
-SUMMARY:时代电气(688187) 分红股权登记
-UID:688187-2026-10-15@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:中远海控(601919) 分红股权登记
 TRIGGER:-P3D
 END:VALARM
@@ -330,17 +319,6 @@ DTSTART;VALUE=DATE:20270809
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0031元\n除权除息影响:\n  每份派现 0.0031元 → 除息后净值约下调0.0031元\n进度: 预计\n除权除息日: 2027-08-09
 SUMMARY:红利国企ETF国泰(510720) 分红除息
 UID:510720-2027-08-09@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:片仔癀(600436) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261015
-DESCRIPTION:股票: 片仔癀(600436)\n每10股派10.7元（每股派1.070元）\n除权除息影响:\n  每股派现 1.070元 → 除息后股价约下调1.07元\n进度: 实施\n股权登记日: 2026-10-15\n除权除息日: 2026-10-16\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-600436
-SUMMARY:片仔癀(600436) 分红股权登记
-UID:600436-2026-10-15@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
