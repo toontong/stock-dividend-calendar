@@ -15,17 +15,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:中煤能源(601898) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261019
-DESCRIPTION:股票: 中煤能源(601898)\n每10股派1.84元（每股派0.184元）\n除权除息影响:\n  每股派现 0.184元 → 除息后股价约下调0.18元\n进度: 实施\n股权登记日: 2026-10-19\n除权除息日: 2026-10-20\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601898
-SUMMARY:中煤能源(601898) 分红股权登记
-UID:601898-2026-10-19@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
@@ -33,6 +22,17 @@ DTSTART;VALUE=DATE:20270411
 DESCRIPTION:股票: 红利国企ETF国泰(510720)\n每份派0.0031元\n除权除息影响:\n  每份派现 0.0031元 → 除息后净值约下调0.0031元\n进度: 预计\n除权除息日: 2027-04-11
 SUMMARY:红利国企ETF国泰(510720) 分红除息
 UID:510720-2027-04-11@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:上海银行(601229) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261026
+DESCRIPTION:股票: 上海银行(601229)\n每10股派3.0元（每股派0.300元）\n除权除息影响:\n  每股派现 0.300元 → 除息后股价约下调0.30元\n进度: 实施\n股权登记日: 2026-10-26\n除权除息日: 2026-10-27\n\n⚠ LLM分析异常: [分析失败: HTTPSConnectionPool(host='api.deepseek.com'\, port=443): Read timed out. (read timeout=60)]
+SUMMARY:上海银行(601229) 分红股权登记
+UID:601229-2026-10-26@astock-dividend
 END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
