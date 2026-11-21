@@ -114,17 +114,6 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:中信银行(601998) 分红股权登记
-TRIGGER:-P3D
-END:VALARM
-DTSTART;VALUE=DATE:20261119
-DESCRIPTION:股票: 中信银行(601998)\n每10股派2.03元（每股派0.203元）\n除权除息影响:\n  每股派现 0.203元 → 除息后股价约下调0.20元\n进度: 实施\n股权登记日: 2026-11-19\n除权除息日: 2026-11-20\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-601998
-SUMMARY:中信银行(601998) 分红股权登记
-UID:601998-2026-11-19@astock-dividend
-END:VEVENT
-BEGIN:VEVENT
-BEGIN:VALARM
-ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
