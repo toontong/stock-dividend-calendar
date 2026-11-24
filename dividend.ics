@@ -81,6 +81,17 @@ END:VEVENT
 BEGIN:VEVENT
 BEGIN:VALARM
 ACTION:DISPLAY
+DESCRIPTION:美的集团(000333) 分红股权登记
+TRIGGER:-P3D
+END:VALARM
+DTSTART;VALUE=DATE:20261127
+DESCRIPTION:股票: 美的集团(000333)\n每10股派5.0元（每股派0.500元）\n除权除息影响:\n  每股派现 0.500元 → 除息后股价约下调0.50元\n进度: 实施\n股权登记日: 2026-11-27\n除权除息日: 2026-11-30\n\nLLM分析报告: https://toontong.github.io/stock-dividend-calendar/analysis.html#stock-000333
+SUMMARY:美的集团(000333) 分红股权登记
+UID:000333-2026-11-27@astock-dividend
+END:VEVENT
+BEGIN:VEVENT
+BEGIN:VALARM
+ACTION:DISPLAY
 DESCRIPTION:红利国企ETF国泰(510720) 分红除息
 TRIGGER:-P3D
 END:VALARM
